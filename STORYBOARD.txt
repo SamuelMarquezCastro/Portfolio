@@ -219,3 +219,9 @@ eventuele technische bouwstap voor centrale NL/EN-content.
 
 GitHub: https://github.com/SamuelMarquezCastro/Portfolio.git
 Koppelen is toegestaan. Geen commits, pushes of publicatie zonder toestemming.
+
+UPDATE 20 SEPTEMBER 2026
+Stap 2: korte introductie en Lumière-projectpresentatie onder de hero.
+Eigen geoptimaliseerd ontwerpbeeld, NL/EN en subtiele binnenkomst.
+De ontwerplink opent het bestaande beeld; case study en Burberry volgen later.
+Geen commit of push zonder nieuwe toestemming voor deze wijzigingen.

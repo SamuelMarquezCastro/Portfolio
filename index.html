@@ -10,7 +10,7 @@
   <title>Samuel | Designer & Developer</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/manrope-bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=2">
   <script src="js/main.js" defer></script>
 </head>
 <body>
@@ -27,12 +27,47 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- Stap 1: alleen de hero. Projecten komen later onder dit eerste scherm. -->
+    <!-- Stap 1: het eerste scherm blijft uitsluitend typografisch. -->
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title">
         <span class="hero-line">Designer <span class="accent">&amp;</span></span>
         <span class="hero-line">Developer<span class="accent">.</span></span>
       </h1>
+    </section>
+
+    <!-- Stap 2: introductie en het eerste project, volledig onder de hero. -->
+    <section class="introduction content-width" aria-labelledby="intro-title">
+      <p class="section-label" data-i18n="introLabel">Aangenaam, ik ben Samuel.</p>
+      <h2 id="intro-title" data-i18n="introTitle">Een oog voor design. Aandacht voor de ervaring.</h2>
+      <p class="intro-copy" data-i18n="introCopy">Ik ontwerp digitale ervaringen en visuele identiteiten. Met UX/UI als focus en oog voor de details die het verschil maken.</p>
+    </section>
+
+    <section class="selected-work content-width" aria-labelledby="work-title">
+      <h2 id="work-title" class="section-label" data-i18n="selectedWork">Geselecteerd werk</h2>
+      <article class="project" aria-labelledby="lumiere-title">
+        <div class="project-heading">
+          <h3 id="lumiere-title">Lumière<span class="accent">.</span></h3>
+          <p class="project-discipline">UX/UI Product Design</p>
+        </div>
+        <figure class="project-visual">
+          <img class="project-logo" src="assets/images/lumiere-logo.svg" width="465" height="290"
+            alt="Lumière" loading="lazy" decoding="async">
+          <img class="project-screen" src="assets/images/lumiere-home.jpg" width="393" height="852"
+            alt="Het Lumière-homescherm met filmaanbod, zoekfunctie en navigatie."
+            data-i18n-alt="lumiereAlt" loading="lazy" decoding="async">
+        </figure>
+        <div class="project-context">
+          <p class="project-description" data-i18n="lumiereDescription">Van een film ontdekken tot een avond plannen. Een cinema-app voor tickets, filmaanbod en persoonlijke voorkeuren.</p>
+          <div class="project-facts">
+            <p class="section-label" data-i18n="schoolProject">Schoolopdracht</p>
+            <p data-i18n="lumiereProcess">Onderzoek, user flows, wireframes en een interactief prototype.</p>
+            <!-- Een echte link naar het ontwerp. De case-studypagina bouwen we later. -->
+            <a class="project-link" href="assets/images/lumiere-home.jpg">
+              <span data-i18n="viewDesign">Bekijk het ontwerp</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
     </section>
   </main>
 </body>

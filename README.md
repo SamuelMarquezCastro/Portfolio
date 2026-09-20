@@ -1,11 +1,11 @@
 # Samuel portfolio
 
 We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
-**Huidige stap: alleen de hero.** Projecten en andere pagina's volgen later.
+**Huidige stap: hero, korte introductie en Lumière-projectpresentatie.** Andere projecten en pagina's volgen later.
 
 ## Bestanden
 
-- `index.html`: de header en de grote hero-titel.
+- `index.html`: header, hero, introductie en Lumière.
 - `css/style.css`: kleuren, lettertypes, spacing, mobiel en introductieanimatie.
 - `js/main.js`: centrale NL/EN-teksten en de taalkeuze via `?lang=en`.
 - `assets/fonts/`: lokaal geladen Manrope-lettertype, met open licentie.
