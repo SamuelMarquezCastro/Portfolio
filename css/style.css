@@ -51,6 +51,7 @@ main:focus { outline: none; }
   align-items: center;
   justify-content: space-between;
 }
+.site-header-static { position: relative; }
 .wordmark {
   padding-block: 12px;
   font-size: 27px;
@@ -58,6 +59,12 @@ main:focus { outline: none; }
   letter-spacing: -.07em;
 }
 .wordmark span { color: var(--accent); }
+.header-actions { display: flex; align-items: center; gap: clamp(20px, 3vw, 54px); }
+.site-nav { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 36px); font-size: 13px; }
+.site-nav a { padding-block: 12px; color: #666259; }
+.site-nav a:hover,
+.site-nav a[aria-current="page"] { color: var(--text); }
+.site-nav a[aria-current="page"] { text-decoration: underline; text-decoration-color: var(--accent); text-underline-offset: 7px; }
 .language-switch { display: flex; align-items: center; gap: 8px; font-size: 12px; }
 .language-switch a { min-height: 44px; min-width: 32px; display: grid; place-items: center; }
 .language-switch a[aria-current] { color: var(--accent); font-weight: 800; }
@@ -192,6 +199,80 @@ main:focus { outline: none; }
   width: min(34%, 510px);
 }
 
+.page-hero { padding-block: clamp(120px, 15vw, 220px) clamp(100px, 12vw, 180px); }
+.page-hero h1,
+.contact-page h1 {
+  max-width: 13ch;
+  margin: 28px 0 42px;
+  font-size: clamp(52px, 8.6vw, 138px);
+  font-weight: 800;
+  line-height: .98;
+  letter-spacing: -.07em;
+  text-wrap: balance;
+}
+.page-intro { max-width: 54ch; margin: 0 0 0 34%; font-size: clamp(17px, 1.65vw, 23px); line-height: 1.65; color: #666259; }
+.work-list { padding-bottom: clamp(130px, 17vw, 260px); }
+.work-row {
+  display: grid;
+  grid-template-columns: 52px 1.1fr 1fr auto;
+  gap: clamp(20px, 4vw, 70px);
+  align-items: start;
+  padding-block: clamp(34px, 5vw, 72px);
+  border-top: 1px solid #d8d2c8;
+}
+.work-row:last-child { border-bottom: 1px solid #d8d2c8; }
+.work-row h2 { margin: 0; font-size: clamp(42px, 5.8vw, 88px); line-height: 1; letter-spacing: -.06em; }
+.work-row > p:not(.project-index) { max-width: 34ch; margin: 5px 0 0; font-size: 15px; line-height: 1.7; color: #666259; }
+.work-discipline { margin: 15px 0 0; font-size: 12px; color: #666259; }
+.about-story {
+  display: grid;
+  grid-template-columns: .65fr 1.35fr;
+  gap: 8%;
+  padding-block: clamp(70px, 10vw, 150px);
+  border-top: 1px solid #d8d2c8;
+}
+.about-story h2 { max-width: 20ch; margin: 0 0 35px; font-size: clamp(34px, 4.8vw, 70px); line-height: 1.1; letter-spacing: -.055em; }
+.about-story div > p { max-width: 55ch; margin: 0; font-size: 17px; line-height: 1.8; color: #666259; }
+.services { padding-block: clamp(110px, 14vw, 210px); }
+.services-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: clamp(30px, 5vw, 80px); margin-top: 36px; }
+.services-grid article { padding-top: 22px; border-top: 1px solid #d8d2c8; }
+.service-number { margin: 0 0 60px; font-size: 12px; color: #8a857c; }
+.services-grid h3 { margin: 0 0 18px; font-size: clamp(24px, 2.6vw, 38px); letter-spacing: -.04em; }
+.services-grid article > p:last-child { max-width: 31ch; margin: 0; font-size: 15px; line-height: 1.7; color: #666259; }
+.tools-line { margin: clamp(70px, 9vw, 130px) 0 0; padding-top: 20px; border-top: 1px solid #d8d2c8; font-size: 13px; line-height: 2; color: #666259; }
+.tools-line span { color: var(--text); }
+.contact-page { min-height: calc(100svh - 100px); padding-block: clamp(120px, 16vw, 240px); }
+.contact-page .page-intro { margin-left: 0; }
+.contact-email {
+  display: inline-flex;
+  align-items: center;
+  gap: 28px;
+  margin-top: clamp(70px, 10vw, 140px);
+  padding-bottom: 10px;
+  border-bottom: 2px solid var(--accent);
+  font-size: clamp(19px, 2.6vw, 40px);
+  letter-spacing: -.035em;
+}
+.contact-email span { transition: transform .25s ease; }
+.contact-email:hover span { transform: translate(4px, -4px); }
+.contact-note { margin: 22px 0 0; font-size: 13px; color: #8a857c; }
+.site-footer {
+  display: grid;
+  grid-template-columns: 1.1fr 1fr 1.2fr auto;
+  gap: 32px;
+  align-items: end;
+  padding-block: 48px;
+  border-top: 1px solid #d8d2c8;
+  font-size: 12px;
+  color: #666259;
+}
+.site-footer p { margin: 0; }
+.footer-name { font-size: 15px; font-weight: 800; color: var(--text); }
+.footer-name span { color: var(--accent); }
+.footer-email { text-decoration: underline; text-underline-offset: 5px; }
+.footer-email:hover { color: var(--text); }
+.footer-meta { justify-self: end; }
+
 /* Eenmalige binnenkomst; inhoud blijft leesbaar zonder JavaScript. */
 @media (prefers-reduced-motion: no-preference) {
   .is-revealed { animation: enter .8s cubic-bezier(.22, 1, .36, 1) both; }
@@ -226,6 +307,11 @@ main:focus { outline: none; }
 @media (max-width: 767px) {
   .site-header { height: 80px; }
   .wordmark { font-size: 25px; }
+  .header-actions { gap: 12px; }
+  .site-nav { gap: 12px; font-size: 11px; }
+  .site-nav a { padding-block: 14px; }
+  .language-switch { gap: 3px; font-size: 10px; }
+  .language-switch a { min-width: 23px; }
   .hero { padding-block: 100px; }
   .hero h1 { font-size: clamp(38px, 12.6vw, 96px); line-height: 1.08; }
   .hero-line:last-child { margin-left: 0; }
@@ -246,6 +332,23 @@ main:focus { outline: none; }
   .burberry-wordmark { top: 8%; left: 7%; font-size: clamp(66px, 23vw, 96px); }
   .burberry-garment-coat { left: -13%; bottom: -7%; width: 78%; }
   .burberry-garment-knit { right: -10%; bottom: -3%; width: 55%; }
+  .page-hero { padding-block: 90px 110px; }
+  .page-hero h1,
+  .contact-page h1 { margin-block: 22px 30px; font-size: clamp(46px, 14.5vw, 68px); }
+  .page-intro { margin-left: 0; }
+  .work-row { grid-template-columns: 34px 1fr; gap: 14px 12px; }
+  .work-row > div,
+  .work-row > p:not(.project-index),
+  .work-row > .project-link { grid-column: 2; }
+  .work-row > p:not(.project-index) { margin-top: 16px; }
+  .work-row > .project-link { justify-self: start; margin-top: 8px; }
+  .about-story { grid-template-columns: 1fr; gap: 35px; }
+  .services-grid { grid-template-columns: 1fr; gap: 56px; }
+  .service-number { margin-bottom: 32px; }
+  .contact-page { min-height: calc(100svh - 80px); padding-block: 90px 140px; }
+  .contact-email { max-width: 100%; gap: 14px; font-size: clamp(16px, 4.5vw, 20px); overflow-wrap: anywhere; }
+  .site-footer { grid-template-columns: 1fr; gap: 16px; align-items: start; }
+  .footer-meta { justify-self: start; margin-top: 18px; }
 }
 @media (max-height: 500px) and (min-width: 768px) {
   .hero { padding-block: 100px 40px; }

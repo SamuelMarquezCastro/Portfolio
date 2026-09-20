@@ -233,3 +233,9 @@ Burberry krijgt een rustige campagne-stage met twee vrijstaande kledingstukken
 op één achtergrond, zonder losse witte beeldvlakken.
 De context en tijdelijke projectlinks blijven onder de beelden staan.
 De aparte case-studypagina volgt later.
+
+Stap 4: brede multipage-structuur toegevoegd.
+Home blijft de visuele introductie. Work geeft een scanbaar projectoverzicht.
+About bundelt richting, vaardigheden en tools. Contact biedt een directe mailroute.
+Alle pagina's delen dezelfde navigatie, footer, NL/EN-content en metadata-aanpak.
+De volgende inhoudelijke stap is een eerste volledige case study voor Lumière.
