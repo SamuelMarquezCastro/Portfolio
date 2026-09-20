@@ -5,18 +5,16 @@
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="description" content="Samuel Marquez Castro. Designer & Developer met een focus op UX/UI en visueel ontwerp.">
   <meta name="theme-color" content="#f5f2eb">
-  <!-- Lokale ontwerppreview. Verwijderen wanneer de volledige site klaar is. -->
   <meta name="robots" content="noindex, nofollow">
   <title>Samuel | Designer & Developer</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/manrope-bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=2">
+  <link rel="stylesheet" href="css/style.css?v=4">
   <script src="js/main.js" defer></script>
 </head>
 <body>
   <a class="skip-link" href="#main" data-i18n="skip">Naar de inhoud</a>
 
-  <!-- Navigatie naar de andere pagina's voegen we toe zodra ze bestaan. -->
   <header class="site-header">
     <a class="wordmark" href="index.html" aria-label="Samuel, home">Samuel<span>.</span></a>
     <nav class="language-switch" aria-label="Taalkeuze">
@@ -27,7 +25,6 @@
   </header>
 
   <main id="main" tabindex="-1">
-    <!-- Stap 1: het eerste scherm blijft uitsluitend typografisch. -->
     <section class="hero" aria-labelledby="hero-title">
       <h1 id="hero-title">
         <span class="hero-line">Designer <span class="accent">&amp;</span></span>
@@ -35,7 +32,6 @@
       </h1>
     </section>
 
-    <!-- Stap 2: introductie en het eerste project, volledig onder de hero. -->
     <section class="introduction content-width" aria-labelledby="intro-title">
       <p class="section-label" data-i18n="introLabel">Aangenaam, ik ben Samuel.</p>
       <h2 id="intro-title" data-i18n="introTitle">Een oog voor design. Aandacht voor de ervaring.</h2>
@@ -44,26 +40,61 @@
 
     <section class="selected-work content-width" aria-labelledby="work-title">
       <h2 id="work-title" class="section-label" data-i18n="selectedWork">Geselecteerd werk</h2>
-      <article class="project" aria-labelledby="lumiere-title">
+      <article class="project project-lumiere" aria-labelledby="lumiere-title">
         <div class="project-heading">
+          <p class="project-index" aria-hidden="true">01</p>
           <h3 id="lumiere-title">Lumière<span class="accent">.</span></h3>
           <p class="project-discipline">UX/UI Product Design</p>
         </div>
-        <figure class="project-visual">
-          <img class="project-logo" src="assets/images/lumiere-logo.svg" width="465" height="290"
-            alt="Lumière" loading="lazy" decoding="async">
-          <img class="project-screen" src="assets/images/lumiere-home.jpg" width="393" height="852"
-            alt="Het Lumière-homescherm met filmaanbod, zoekfunctie en navigatie."
-            data-i18n-alt="lumiereAlt" loading="lazy" decoding="async">
+        <figure class="project-stage project-stage-lumiere">
+          <div class="lumiere-identity">
+            <span data-i18n="lumiereTagline">Een avond film begint hier.</span>
+            <strong>lumière</strong>
+          </div>
+          <div class="lumiere-device">
+            <img src="assets/images/lumiere-home.jpg" width="393" height="852"
+              alt="Het Lumière-homescherm met filmaanbod, zoekfunctie en navigatie."
+              data-i18n-alt="lumiereAlt" loading="lazy" decoding="async">
+          </div>
         </figure>
         <div class="project-context">
           <p class="project-description" data-i18n="lumiereDescription">Van een film ontdekken tot een avond plannen. Een cinema-app voor tickets, filmaanbod en persoonlijke voorkeuren.</p>
           <div class="project-facts">
             <p class="section-label" data-i18n="schoolProject">Schoolopdracht</p>
             <p data-i18n="lumiereProcess">Onderzoek, user flows, wireframes en een interactief prototype.</p>
-            <!-- Een echte link naar het ontwerp. De case-studypagina bouwen we later. -->
             <a class="project-link" href="assets/images/lumiere-home.jpg">
               <span data-i18n="viewDesign">Bekijk het ontwerp</span><span aria-hidden="true">↗</span>
+            </a>
+          </div>
+        </div>
+      </article>
+
+      <article class="project project-burberry" aria-labelledby="burberry-title">
+        <div class="project-heading">
+          <p class="project-index" aria-hidden="true">02</p>
+          <h3 id="burberry-title">Burberry<span class="accent">.</span></h3>
+          <p class="project-discipline">Brand Design</p>
+        </div>
+        <figure class="project-stage project-stage-burberry">
+          <p class="burberry-wordmark" aria-hidden="true">Burberry</p>
+          <div class="burberry-garment burberry-garment-coat">
+            <img src="assets/images/burberry-coat.png" width="1086" height="1448"
+              alt="Trenchcoat met het ontworpen Burberry-label."
+              data-i18n-alt="burberryJacketAlt" loading="lazy" decoding="async">
+          </div>
+          <div class="burberry-garment burberry-garment-knit">
+            <img src="assets/images/burberry-knit.png" width="1122" height="1402"
+              alt="Zwarte trui met het Burberry-woordmerk en monogram."
+              data-i18n-alt="burberryKnitAlt" loading="lazy" decoding="async">
+          </div>
+        </figure>
+        <div class="project-context">
+          <p class="project-description" data-i18n="burberryDescription">Een rustigere, moderne identiteit die het Britse erfgoed herkenbaar houdt.</p>
+          <div class="project-facts">
+            <p class="section-label" data-i18n="personalProject">Persoonlijk project</p>
+            <p data-i18n="burberryProcess">Merkonderzoek, identiteit, logo-exploratie en toepassingen.</p>
+            <a class="project-link" href="assets/images/burberry-coat.png">
+              <span data-i18n="viewConcept">Bekijk het concept</span><span aria-hidden="true">↗</span>
             </a>
           </div>
         </div>

@@ -1,14 +1,15 @@
 # Samuel portfolio
 
 We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
-**Huidige stap: hero, korte introductie en Lumière-projectpresentatie.** Andere projecten en pagina's volgen later.
+**Huidige stap: hero, korte introductie en previews van Lumière en Burberry.** Andere pagina's volgen later.
 
 ## Bestanden
 
-- `index.html`: header, hero, introductie en Lumière.
+- `index.html`: header, hero, introductie en de twee projectpreviews.
 - `css/style.css`: kleuren, lettertypes, spacing, mobiel en introductieanimatie.
 - `js/main.js`: centrale NL/EN-teksten en de taalkeuze via `?lang=en`.
 - `assets/fonts/`: lokaal geladen Manrope-lettertype, met open licentie.
+- `assets/images/`: geoptimaliseerde projectbeelden en transparante Burberry-toepassingen.
 - `STORYBOARD.txt`: het grotere plan en de gemaakte afspraken.
 
 ## Bekijken

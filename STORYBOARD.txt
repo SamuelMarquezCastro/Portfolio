@@ -225,3 +225,11 @@ Stap 2: korte introductie en Lumière-projectpresentatie onder de hero.
 Eigen geoptimaliseerd ontwerpbeeld, NL/EN en subtiele binnenkomst.
 De ontwerplink opent het bestaande beeld; case study en Burberry volgen later.
 Geen commit of push zonder nieuwe toestemming voor deze wijzigingen.
+
+Stap 3: Burberry als tweede projectpreview toegevoegd.
+De previews gebruiken nu één redactioneel systeem met nummer, titel, discipline
+en context. Lumière krijgt een donkere cinema-stage met de app als focus.
+Burberry krijgt een rustige campagne-stage met twee vrijstaande kledingstukken
+op één achtergrond, zonder losse witte beeldvlakken.
+De context en tijdelijke projectlinks blijven onder de beelden staan.
+De aparte case-studypagina volgt later.
