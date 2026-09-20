@@ -1,0 +1,221 @@
+SAMUEL PORTFOLIO — STORYBOARD EN PROJECTREFERENTIE
+Bijgewerkt: 19 september 2026
+Status: implementatie gestart, uitsluitend stap 1 (hero). Iedere volgende sectie eerst samen afstemmen.
+
+1. DOEL EN POSITIONERING
+
+Een visueel sterk, professioneel, toegankelijk en technisch degelijk Minimum
+Viable Portfolio. MVP beperkt features en complexiteit, niet kwaliteit.
+Het portfolio moet later publiek kunnen worden zonder volledige redesign.
+
+Samuel positioneert zich als Designer & Developer, met design en UX/UI voorop.
+Hij zit in het laatste jaar bachelor Digital Experience Design en zoekt een
+stage. Werkgevers vormen de primaire doelgroep. Het portfolio blijft breed
+bruikbaar voor connecties, samenwerkingen en onderwijs; het mag niet draaien
+om een stagezoektocht. Stageperiode en regio zijn nog niet bekend.
+
+Gewenste indruk: visueel oog, betrouwbaarheid, degelijk werk en professionalisme.
+Motivatie voor de opleiding: creativiteit gebruiken. Geen persoonlijke
+geschiedenis, resultaten of onderzoeksbevindingen verzinnen.
+
+2. BEVESTIGDE RANDVOORWAARDEN
+
+- Website met meerdere pagina's, geen onepager.
+- Nederlands en Engels vanaf het begin, dezelfde structuur en gedeelde styling.
+- HTML, CSS en JavaScript zelf schrijven, begrijpelijk en aanpasbaar voor Samuel.
+- Frameworks of extra libraries alleen na uitleg en expliciete goedkeuring.
+- Het eerdere Next.js/TypeScript-voorstel is vervallen.
+- Geen 3D, WebGL, zware scenes, generieke kaartgrids of onnodige effecten.
+- Responsive, toegankelijke en performante uitwerking; mobiel is volwaardig.
+- Respecteer prefers-reduced-motion, toetsenbordgebruik en normaal scrollgedrag.
+- Content eerst, daarna structuur, compositie, interactie en implementatie.
+- Toestemming voor websitecode gegeven. Rustig stap voor stap bouwen: eerst hero, daarna pas projecten na afstemming.
+- GitHub-koppeling is toegestaan. Committen en pushen alleen met toestemming.
+- .agent/, .agents/ en skills-lock.json blijven buiten Git.
+
+3. DESIGNREFERENTIES EN RICHTING
+
+Beschikbare skill: .agents/skills/design-taste-frontend/SKILL.md,
+afkomstig van Leonxlnx/taste-skill. De exact genoemde gpt-taste skill werd niet
+gevonden. Gebruikerskeuzes gaan voor op standaardkeuzes uit de skill.
+
+Referenties en wat Samuel eraan waardeert:
+- https://loveandmoney.com/ : grote letters en typografische durf.
+- https://goats.com.pl/ : scrollervaring en eenvoudige vibe.
+- https://gustavobatista.dev/ : interactie en persoonlijkheid.
+- Apple MacBook-pagina's: meegenomen worden tijdens scrollen, verhaalopbouw.
+
+Bevestigd: lichte, warme basis; creatief, uitgesproken en toegankelijk.
+Voorgesteld, nog visueel te beoordelen:
+- Warm gebroken wit als achtergrond, diep antraciet voor tekst.
+- Warm vermiljoen als spaarzaam interactief accent.
+- Karaktervolle sans-serif, krachtige koppen en rustige lopende tekst.
+- Exact lettertype en kleurwaarden zijn nog niet gekozen.
+- Ruime echte projectbeelden, sterke uitlijning, gecontroleerde asymmetrie.
+- Overwegend rechte beeldkaders, weinig decoratieve containers.
+- Projecten behouden hun eigen kleuren binnen de herkenbare portfoliobasis.
+- Hero vult het eerste scherm met alleen navigatie en grote typografie. Overige content pas na scrollen; extra witruimte.
+
+4. INFORMATIEARCHITECTUUR
+
+Eerste versie: zes pagina's, elk in NL en EN.
+1. Home: introductie, selectie en uitnodiging tot verdieping.
+2. Werk: scanbaar overzicht van geselecteerde projecten.
+3. Lumiere: eigen projectpagina met UX/UI-verhaal.
+4. Burberry: eigen projectpagina met brandingverhaal.
+5. Over mij: persoon, opleiding, aanpak en vaardigheden.
+6. Contact: e-mail en LinkedIn.
+
+Navigatie: naam links als link naar Home; Werk, Over mij, Contact en NL / EN.
+Mobiel: naam, taalkeuze en toegankelijke menuknop.
+
+Beoogde taal-URL's: /nl/ en /en/; projectroutes bijvoorbeeld
+/nl/work/lumiere/ en /en/work/lumiere/. Exacte routes nog technisch vastleggen.
+Taalwissel opent de equivalente pagina. Alt-teksten en metadata ook vertalen.
+Centrale vertaalbare content; geen aparte componenten per taal.
+Een eventuele kleine bouwstap voor gedeelde templates en volledige HTML per
+taal moet eerst worden uitgelegd en goedgekeurd.
+
+5. HOMEPAGE STORYBOARD
+
+Moment 1 — Binnenkomen
+Naam in header en grote titel Designer & Developer. Geen beelden, CTA of introductieparagraaf in de hero.
+Links uitgelijnd, expressieve typografie, bewust verdeelde witruimte.
+Voorlopige copy:
+"Ik ben Samuel. Ik ontwerp digitale ervaringen en visuele identiteiten,
+met aandacht voor gebruiksgemak en afwerking."
+Korte tekstintroductie; content en navigatie zijn direct bruikbaar.
+Desktop en mobiel: alleen de hero in het openingsscherm. Introductie en projecten worden pas in een volgende stap onder de hero toegevoegd.
+
+Moment 2 — Lumiere ontdekken
+Groot projectbeeld, korte context, rol UX/UI Product Designer en projectlink.
+Context: cinema-app om films te ontdekken, tickets te bestellen en persoonlijke
+voorkeuren zoals locatie te bewaren.
+Rustige nadruk op beeld bij binnenkomst, geen verborgen essentiële informatie.
+
+Moment 3 — Burberry ontdekken
+Ruime compositie van een sterke toepassing en ondersteunend detail.
+Rol Brand Designer. Persoonlijk project (PET-project).
+Eigen compositie passend bij branding. Subtiele hover- en focusfeedback.
+
+Moment 4 — Samuel leren kennen
+Korte passage over creativiteit, opleiding en interesse in digitale ervaringen.
+Link naar Over mij. Rustiger tempo, aandacht voor de tekst.
+
+Moment 5 — Contact leggen
+Korte uitnodiging, e-mail, LinkedIn en verzorgde footer.
+Brede, blijvend bruikbare formulering, geen prominente stagecampagne.
+
+6. WERK-PAGINA
+
+Compacte visuele index met Lumiere en Burberry.
+Per project: hoofdbeeld, titel, een zin context, rol, projecttype en detail-link.
+Desktop: ruime presentaties onder elkaar, beeldverhoudingen passend bij werk.
+Informatie op voorspelbare plekken; geen generieke gelijke kaarten.
+Mobiel: heldere verticale reeks; geen hover-afhankelijke content.
+Home introduceert binnen een verhaal, Werk laat direct vergelijken en kiezen.
+
+7. LUMIERE-PAGINA
+
+Bekende feiten:
+- Schoolopdracht; rol UX/UI Product Designer.
+- Voor bezoekers die films willen bekijken, tickets bestellen en via een
+  account voorkeuren willen bewaren, bijvoorbeeld locatie.
+- Samuel maakte een volledig Figma-prototype.
+- Onderzoek, user flows, wireframes, prototype en gebruikerstest uitgevoerd.
+- Individueel versus groepswerk, exacte bijdrage en testbevindingen nog navragen.
+- Gebruiker wil details van onderzoek en testen later aanleveren.
+
+Hoofdstukken:
+1. Introductie: product, doelgroep, rol en schoolcontext.
+2. Resultaat: groot interfacebeeld en enkele relevante schermen.
+3. Ontwerpvraag: films ontdekken, tickets bestellen, voorkeuren bewaren.
+4. Onderzoek naar structuur: echte inzichten, relevante flow en wireframes.
+5. Keuze uitgelicht: een concrete ontwerpbeslissing met bewijs in beeld.
+6. Testen en verbeteren: echte bevinding en bijbehorende aanpassing.
+7. Prototype en reflectie: Figma-link, leerpunten en mogelijke vervolgstappen.
+8. Verder kijken: Burberry-link en compacte contactmogelijkheid.
+
+Belangrijkste voorgestelde scrollmoment:
+Op desktop blijft een scherm kort staan terwijl twee of drie inhoudelijke
+stappen langskomen. Beeld verandert mee, bijvoorbeeld wireframe naar interface.
+Exacte scene kiezen nadat de inhoud bekend is. Geen onbewezen verbeterclaims.
+Mobiel: elke stap met eigen beeld en uitleg in normale documentvolgorde.
+Reduced motion: inhoud direct leesbaar, zonder vastgezette animatie.
+Figma als duidelijke externe link; geen automatisch geladen zware embed nodig.
+
+8. BURBERRY-PAGINA
+
+Bekende feiten:
+- Persoonlijk PET-project; rol Brand Designer.
+- Beschikbaar: case-studytekst, SVG, productbeelden en logoschetsen.
+- Maak onderscheid tussen beoogde toepassingen en daadwerkelijk uitgewerkt werk.
+- Benoem de persoonlijke rebrandcontext; suggereer geen klantopdracht.
+
+Hoofdstukken:
+1. Introductie: persoonlijke rebrand, rol en ontwerpambitie.
+2. Identiteit in beeld: sterkste uitgewerkte toepassing.
+3. Richting en keuzes: behouden eigenschappen en beoogde veranderingen.
+4. Schets naar identiteit: beperkte relevante selectie en gekozen richting.
+5. Systeem: logo, typografie en kleur in samenhang.
+6. Toepassingen: uitsluitend daadwerkelijk uitgewerkt materiaal.
+7. Reflectie: wat keuzes opleverden en mogelijke verdere ontwikkeling.
+
+Beeldritme: grote beelden, detailuitsneden en schaalverschillen.
+Gedeelde paginabasis met Lumiere, projectgebonden composities.
+
+9. OVERIGE PROJECTEN
+
+TokenPlatform: schoolopdracht met PHP en database, login en tokens versturen
+en ontvangen. Mogelijk later aanvullend bewijs van technisch inzicht.
+Nog geen projectmateriaal in de betreffende map bij eerste inspectie.
+
+YouTube: persoonlijke montageprojecten, voetbalshorts. Niet opnemen in de
+eerste selectie; Samuel zou deze niet als eerste tonen aan werkgevers.
+
+10. OVER MIJ EN CONTACT
+
+Over mij:
+- Kort persoonlijk verhaal op basis van echte antwoorden.
+- Laatste jaar bachelor Digital Experience Design.
+- UX/UI: onderzoek, flows, wireframes en prototypes.
+- Visual design: identiteit, typografie en visuele afwerking.
+- Development: HTML, CSS, JavaScript en basiskennis PHP.
+- Tools compact bij disciplines: Figma, Illustrator, Premiere Pro,
+  After Effects en Photoshop.
+- Geen vaardigheidspercentages of overbodige verzameling softwarelogo's.
+- Portret optioneel; nog niet besloten.
+
+Contact:
+- Korte uitnodiging, zichtbaar e-mailadres en LinkedIn.
+- Geen contactformulier nodig in de eerste versie.
+- E-mail: samuelmarquezcastro14@gmail.com. LinkedIn bestaat nog niet; Figma-link volgt later.
+
+11. MOTION, TOEGANKELIJKHEID EN KWALITEIT
+
+- Korte tekst- en beeldintroducties en subtiele hover/focus/drukfeedback.
+- Een inhoudelijk scrollverhaal op Lumiere.
+- Paginaovergang alleen als navigatie voorspelbaar en direct bruikbaar blijft.
+- Normaal scrollen, werkende terugknop en directe links.
+- Geen essentiële content achter hover of afhankelijk van animatie.
+- prefers-reduced-motion respecteren.
+- Semantische HTML, logische headings, zichtbare focus, skiplink, contrasten
+  en voldoende grote aanraakvlakken.
+- Responsive beelden met vaste afmetingen en geschikte uitsneden/formaten.
+- Lokaal geladen fonts, beperkte JavaScript en geen onnodige dependencies.
+- Metadata per taal, canonical/hreflang, sitemap, robots, favicon en social preview.
+- Mobiel, toetsenbord, taalwissels, links en performance controleren.
+
+12. VOLGENDE STAPPEN EN GOEDKEURINGEN
+
+Volgende stap:
+Eerst de hero samen beoordelen en verfijnen. Pas na akkoord een volgende sectie bouwen.
+Statische imagegen-voorstellen zijn verlaten. We beoordelen een echte HTML/CSS-preview.
+Huidige stap: hero in index.html, css/style.css en js/main.js. Geen overige pagina’s vooruitbouwen.
+
+Nog open: definitief font/accent, echte projectselectie van beelden, Lumiere-
+bevindingen en bijdrage, persoonlijke tekst, portret, contactgegevens en
+eventuele technische bouwstap voor centrale NL/EN-content.
+
+GitHub: https://github.com/SamuelMarquezCastro/Portfolio.git
+Koppelen is toegestaan. Geen commits, pushes of publicatie zonder toestemming.

@@ -1,0 +1,7 @@
+# Lokale agentconfiguratie en skills
+.agent/
+.agents/
+skills-lock.json
+
+# macOS
+.DS_Store
