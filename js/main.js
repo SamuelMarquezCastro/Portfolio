@@ -50,9 +50,13 @@ const translations = {
     serviceFrontend: 'Responsive interfaces bouwen met HTML, CSS en JavaScript.',
     toolsLabel: 'Tools',
     contactLabel: 'Contact',
-    contactTitle: 'Laten we kennismaken.',
-    contactIntro: 'Voor een project, stage, rol of gewoon een goed gesprek over design. Je kunt me rechtstreeks mailen.',
-    contactNote: 'LinkedIn wordt later toegevoegd.',
+    contactTitle: 'Heb je iets in gedachten?',
+    contactIntro: 'Ik sta open voor een stage, junior rol, creatieve samenwerking of een goed gesprek over design.',
+    contactKicker: 'Stuur me een e-mail',
+    availabilityLabel: 'Beschikbaar voor',
+    availabilityCopy: 'Stages, junior mogelijkheden en creatieve projecten.',
+    focusLabel: 'Focus',
+    focusCopy: 'UX/UI, visueel ontwerp en digitale ervaringen.',
     footerRole: 'Designer & Developer met een focus op UX/UI.',
     skip: 'Naar de inhoud',
     language: 'Taalkeuze',
@@ -107,9 +111,13 @@ const translations = {
     serviceFrontend: 'Building responsive interfaces with HTML, CSS and JavaScript.',
     toolsLabel: 'Tools',
     contactLabel: 'Contact',
-    contactTitle: 'Let’s get to know each other.',
-    contactIntro: 'For a project, internship, role or simply a good conversation about design. You can email me directly.',
-    contactNote: 'LinkedIn will be added later.',
+    contactTitle: 'Have something in mind?',
+    contactIntro: 'I’m open to an internship, junior role, creative collaboration or a good conversation about design.',
+    contactKicker: 'Send me an email',
+    availabilityLabel: 'Available for',
+    availabilityCopy: 'Internships, junior opportunities and creative projects.',
+    focusLabel: 'Focus',
+    focusCopy: 'UX/UI, visual design and digital experiences.',
     footerRole: 'Designer & Developer focused on UX/UI.',
     skip: 'Skip to content',
     language: 'Language',
@@ -174,5 +182,5 @@ if ('IntersectionObserver' in window) {
       observer.unobserve(entry.target);
     });
   }, { threshold: 0.12 });
-  document.querySelectorAll('.introduction, .project-stage, .project-context, .page-hero, .work-row, .about-portrait, .about-story, .process-grid, .services-grid, .contact-email').forEach(section => observer.observe(section));
+  document.querySelectorAll('.introduction, .project-stage, .project-context, .page-hero, .work-row, .about-portrait, .about-story, .process-grid, .services-grid, .contact-panel, .contact-details').forEach(section => observer.observe(section));
 }
