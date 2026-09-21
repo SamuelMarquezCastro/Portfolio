@@ -250,6 +250,13 @@ zoals verpakking en een website worden niet als afgeronde toepassingen getoond.
 Home en Work linken nu naar deze projectpagina. Hierna volgt een gezamenlijke
 verfijningsronde van ontwerp, inhoud, responsiviteit, toegankelijkheid en techniek.
 
+VERFIJNING PROJECTPRESENTATIE — LUMIÈRE EN BURBERRY
+Op Home en in de Werk-thumbnails gebruiken beide previews de originele
+SVG-logo's in plaats van nagemaakte tekst. Het Lumière-appscherm krijgt meer
+ruimte in de compositie. Bij Burberry staat het originele logo samen met de
+bestaande kledingbeelden in een rustige compositie. De Werk-lijststructuur
+blijft behouden; volgende stappen verfijnen de rest van de portfolio.
+
 Stap 4: brede multipage-structuur toegevoegd.
 Home blijft de visuele introductie. Work geeft een scanbaar projectoverzicht.
 About bundelt richting, vaardigheden en tools. Contact biedt een directe mailroute.
