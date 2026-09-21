@@ -1,0 +1,86 @@
+LUMIÈRE CASE STUDY — INHOUDELIJK CONCEPT
+Status: inhoudelijke referentie voor lumiere.html.
+
+KERNVERHAAL
+
+Een cinema-app ontwerpen die mensen zouden willen gebruiken. De opdracht was
+individueel en maakte deel uit van het vak Lab. Lumière heeft in werkelijkheid
+geen app; dit is een zelfstandig ontwerpconcept, geen opdracht van Lumière.
+
+De ontwerpvraag: hoe kan een app bezoekers helpen een film te ontdekken, hun
+bezoek te plannen en tickets te kiezen zonder dat het proces druk of verwarrend
+wordt? Het concept bevat ook een account waarin voorkeuren, zoals een locatie,
+bewaard kunnen worden.
+
+Samuel werkte als UX/UI Product Designer aan onderzoek, user flows,
+wireframes, een interactief Figma-prototype en een gebruikerstest. Zijn
+belangrijkste inzicht uit die test: bij het kiezen van een film willen mensen
+eenvoud en overzicht. Te veel opties of een druk scherm kunnen verwarren.
+
+VOORSTEL VOOR DE PAGINA
+
+1. OPENING
+   Titel: Lumière
+   Ondertitel: Een eenvoudiger pad van film ontdekken naar een avond plannen.
+   Context: Individuele Lab-opdracht · UX/UI Product Design · Appconcept
+   Korte tekst: Voor Lumière ontwierp ik een appconcept waarmee bezoekers
+   films kunnen ontdekken, tickets kunnen kiezen en persoonlijke voorkeuren
+   kunnen bewaren. Het uitgangspunt was niet om zoveel mogelijk functies te
+   tonen, maar om de ervaring helder en bruikbaar te maken.
+
+2. DE ONTWERPVRAAG
+   Hoe ontwerp je een cinema-app die mensen echt zouden gebruiken?
+   Films ontdekken en tickets kiezen moeten eenvoudig blijven, terwijl
+   informatie over aanbod, locatie en planning beschikbaar blijft.
+
+3. MIJN AANPAK
+   Ik begon met het in kaart brengen van de mogelijke stappen in de app.
+   Daarna werkte ik het homescherm uit van low-fi via mid-fi naar high-fi.
+   Met een interactief Figma-prototype kon ik de richting testen.
+   Beeld: flowchart naast of vóór de drie ontwerpstadia.
+
+4. DE KEUZE DIE TELT
+   Testgebruikers lieten zien dat het kiezen van een film vooral eenvoudig
+   moet zijn. Een overdaad aan opties of een te druk scherm kan verwarren.
+   Dit inzicht vormt de inhoudelijke kern van de case study. Samuel herinnert
+   zich niet meer of er daarna een concrete wijziging volgde. Claim die niet.
+
+5. HET RESULTAAT
+   Een uitgewerkt homescherm en een interactief Figma-prototype voor het
+   bredere appconcept. Laat het definitieve scherm groot zien en gebruik de
+   eerdere versies om ontwerpkeuzes zichtbaar te maken.
+
+6. REFLECTIE
+   Deze opdracht liet zien dat een sterke interface niet wordt bepaald door
+   het aantal opties, maar door de helderheid van de keuzes. De volgende stap
+   voor deze case study is het preciezer tonen van de test, de iteratie en
+   enkele belangrijke schermen uit het prototype.
+
+BESCHIKBAAR BEELDMATERIAAL
+
+- Lumiere_project/Flowchart.png: informatiestructuur en mogelijke routes.
+- Lumiere_project/Home_lowfi.png: eerste structuur van het homescherm.
+- Lumiere_project/Home_midfi.png: tussenstap in de visuele uitwerking.
+- Lumiere_project/Home_highfi.png: definitieve versie van het homescherm.
+- Lumiere_project/lumiere_logo.svg: projectidentiteit.
+
+NOG TE BEVESTIGEN VOOR PUBLICATIE
+
+- Eventueel extra schermen uit het prototype.
+- Eventuele methoden, aantal deelnemers of resultaten, alleen als Samuel ze
+  kan bevestigen. Geen cijfers of impact verzinnen.
+
+PUBLIEK FIGMA-PROTOTYPE
+
+https://www.figma.com/proto/f5QRp2eRR9h3iUdd3vsFIu/wireframe-lumiere?page-id=361%3A6370&node-id=361-6392&scaling=min-zoom&content-scaling=fixed&starting-point-node-id=361%3A6392
+
+De link is gecontroleerd: het prototype opent zonder login in de browser.
+De eerste getoonde stap biedt Login, Registreer en Gast aan. De portfolio
+gebruikt een gewone externe link, geen ingesloten Figma-frame.
+
+TAAL EN POSITIONERING
+
+- Op de website dezelfde hoofdstukken in Nederlands en Engels.
+- Noem het consequent een individueel schoolproject / ontwerpconcept.
+- Schrijf nooit alsof Lumière de opdrachtgever was of alsof de app bestaat.
+- Geen claims over conversie, gebruikscijfers of tevredenheid zonder bewijs.

@@ -234,6 +234,14 @@ op één achtergrond, zonder losse witte beeldvlakken.
 De context en tijdelijke projectlinks blijven onder de beelden staan.
 De aparte case-studypagina volgt later.
 
+UPDATE 21 SEPTEMBER 2026
+Lumière-case study als aparte pagina gebouwd op basis van bevestigde inhoud:
+individuele Lab-opdracht, UX/UI-rol, appconcept, flowchart, low/mid/high-fi
+homescherm en een gebruikerstestinzicht over eenvoud bij het kiezen van films.
+De publieke Figma-prototypelink opent als gewone externe link. Er wordt geen
+specifieke wijziging na de test of meetbare impact geclaimd, omdat Samuel die
+niet kan bevestigen. De volgende projectpagina is Burberry.
+
 Stap 4: brede multipage-structuur toegevoegd.
 Home blijft de visuele introductie. Work geeft een scanbaar projectoverzicht.
 About bundelt richting, vaardigheden en tools. Contact biedt een directe mailroute.

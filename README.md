@@ -1,7 +1,7 @@
 # Samuel portfolio
 
 We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
-**Huidige stap: de brede multipage-structuur met Home, Work, About en Contact.** De case studies en visuele details volgen later.
+**Huidige stap: Home, Work, About, Contact en een eerste Lumière-case study.** De Burberry-case study en visuele details volgen later.
 
 ## Bestanden
 
@@ -9,11 +9,13 @@ We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
 - `work.html`: compact overzicht van het geselecteerde werk.
 - `about.html`: richting, profiel en vaardigheden.
 - `contact.html`: directe contactmogelijkheid.
+- `lumiere.html`: eerste UX/UI-case study met een link naar het Figma-prototype.
 - `css/style.css`: kleuren, lettertypes, spacing, mobiel en introductieanimatie.
 - `js/main.js`: centrale NL/EN-teksten, metadata en taalkeuze via `?lang=en`.
 - `assets/fonts/`: lokaal geladen Manrope-lettertype, met open licentie.
 - `assets/images/`: geoptimaliseerde projectbeelden en transparante Burberry-toepassingen.
 - `STORYBOARD.txt`: het grotere plan en de gemaakte afspraken.
+- `LUMIERE_CASE_STUDY_DRAFT.txt`: inhoudelijke onderbouwing en bronnen voor de Lumière-pagina.
 
 ## Bekijken
 
