@@ -1,0 +1,254 @@
+.burberry-back {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  min-height: 44px;
+  margin-bottom: clamp(70px, 10vw, 145px);
+  color: #666259;
+  font-size: 13px;
+}
+.burberry-back:hover { color: var(--accent); }
+.burberry-intro { padding-block: 48px clamp(80px, 9vw, 135px); }
+.burberry-intro h1 {
+  margin: 18px 0 25px;
+  font-size: clamp(66px, 15vw, 230px);
+  font-weight: 800;
+  line-height: 1;
+  letter-spacing: -.075em;
+}
+.burberry-deck {
+  max-width: 15ch;
+  margin: 0;
+  font-size: clamp(37px, 5vw, 78px);
+  font-weight: 800;
+  line-height: 1.13;
+  letter-spacing: -.06em;
+  text-wrap: balance;
+}
+.burberry-intro-copy {
+  max-width: 51ch;
+  margin: clamp(60px, 7vw, 105px) 0 0 auto;
+  color: #666259;
+  font-size: clamp(16px, 1.6vw, 21px);
+  line-height: 1.7;
+}
+.burberry-hero { margin: 0; }
+.burberry-hero-inner {
+  position: relative;
+  min-height: clamp(570px, 58vw, 860px);
+  overflow: hidden;
+  background: #d8c8ae;
+}
+.burberry-hero-wordmark {
+  position: absolute;
+  z-index: 1;
+  top: 9%;
+  left: 7%;
+  margin: 0;
+  color: #292520;
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(70px, 13vw, 210px);
+  line-height: 1;
+  letter-spacing: -.075em;
+}
+.burberry-hero img {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  height: auto;
+  filter: drop-shadow(0 28px 25px #5a49352a);
+}
+.burberry-hero-coat { left: 6%; bottom: -22%; width: min(46%, 700px); }
+.burberry-hero-knit { right: 7%; bottom: -17%; width: min(35%, 520px); }
+.burberry-caption {
+  padding: 17px var(--gutter) 0;
+  color: #777168;
+  font-size: 12px;
+}
+.burberry-overview {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 10%;
+  padding-block: clamp(125px, 15vw, 220px);
+}
+.burberry-overview h2,
+.burberry-reflection h2 {
+  max-width: 15ch;
+  margin: 25px 0 0;
+  font-size: clamp(39px, 5vw, 76px);
+  line-height: 1.12;
+  letter-spacing: -.06em;
+}
+.burberry-overview > div:last-child > p,
+.burberry-principle > div > p,
+.burberry-section-heading > div > p,
+.burberry-reflection > div > p {
+  max-width: 57ch;
+  margin: 0;
+  color: #666259;
+  font-size: clamp(16px, 1.5vw, 21px);
+  line-height: 1.75;
+}
+.burberry-facts { margin: 58px 0 0; }
+.burberry-facts > div {
+  display: grid;
+  grid-template-columns: .62fr 1fr;
+  gap: 20px;
+  padding-block: 16px;
+  border-top: 1px solid #d8d2c8;
+  font-size: 13px;
+}
+.burberry-facts > div:last-child { border-bottom: 1px solid #d8d2c8; }
+.burberry-facts dt { color: #777168; }
+.burberry-facts dd { margin: 0; }
+.burberry-principle {
+  display: grid;
+  grid-template-columns: .36fr 1fr;
+  gap: 8%;
+  padding-block: clamp(120px, 14vw, 200px);
+  border-top: 1px solid #d8d2c8;
+}
+.burberry-principle h2 {
+  max-width: 18ch;
+  margin: 0 0 45px;
+  font-size: clamp(45px, 6vw, 94px);
+  line-height: 1.1;
+  letter-spacing: -.065em;
+}
+.burberry-exploration,
+.burberry-identity,
+.burberry-applications {
+  padding-block: clamp(110px, 12vw, 180px);
+  border-top: 1px solid #d8d2c8;
+}
+.burberry-section-heading {
+  display: grid;
+  grid-template-columns: .36fr 1fr;
+  gap: 8%;
+  margin-bottom: clamp(55px, 8vw, 110px);
+}
+.burberry-section-heading h2 {
+  max-width: 17ch;
+  margin: 0 0 35px;
+  font-size: clamp(39px, 5.3vw, 80px);
+  line-height: 1.12;
+  letter-spacing: -.06em;
+}
+.burberry-sketch { margin: 0; }
+.burberry-sketch img {
+  display: block;
+  width: 100%;
+  max-height: 750px;
+  object-fit: contain;
+  background: #e9e5de;
+}
+.burberry-sketch figcaption,
+.burberry-mark-stage figcaption,
+.burberry-application-grid figcaption {
+  margin-top: 15px;
+  color: #777168;
+  font-size: 12px;
+}
+.burberry-mark-stage {
+  display: grid;
+  justify-items: center;
+  align-content: center;
+  min-height: clamp(470px, 48vw, 720px);
+  margin: 0;
+  padding: 75px 24px 30px;
+  background: #e9e3d8;
+}
+.burberry-logo-crop {
+  position: relative;
+  width: min(100%, 700px);
+  aspect-ratio: 3 / 2;
+  overflow: hidden;
+}
+.burberry-logo-crop img {
+  position: absolute;
+  display: block;
+  width: 166.667%;
+  max-width: none;
+  height: auto;
+  left: -33.333%;
+  top: -67.5%;
+}
+.burberry-mark-stage figcaption { align-self: end; margin-top: 70px; }
+.burberry-palette {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 35px;
+  padding-top: 30px;
+}
+.burberry-palette p { max-width: 42ch; margin: 0; font-size: 14px; line-height: 1.6; }
+.burberry-colors { display: flex; gap: 8px; }
+.burberry-colors span { display: block; width: 55px; height: 55px; border: 1px solid #c8c0b3; }
+.burberry-colors span:nth-child(1) { background: #f6f1e8; }
+.burberry-colors span:nth-child(2) { background: #111; }
+.burberry-colors span:nth-child(3) { background: #c8b08a; }
+.burberry-application-grid {
+  display: grid;
+  grid-template-columns: 1.2fr .8fr;
+  gap: clamp(25px, 5vw, 70px);
+  align-items: start;
+}
+.burberry-application-grid figure { margin: 0; }
+.burberry-application-grid img {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  background: #ede8df;
+}
+.burberry-application-coat { grid-row: span 2; }
+.burberry-application-coat img { aspect-ratio: 3 / 4; }
+.burberry-application-knit img,
+.burberry-application-sweater img { aspect-ratio: 4 / 4.6; }
+.burberry-reflection {
+  display: grid;
+  grid-template-columns: .36fr 1fr;
+  gap: 8%;
+  padding-block: clamp(120px, 15vw, 220px);
+  border-top: 1px solid #d8d2c8;
+}
+.burberry-reflection h2 { margin: 0 0 40px; }
+.burberry-next { padding-bottom: clamp(100px, 12vw, 170px); }
+.burberry-next a {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
+  padding-block: 30px;
+  border-top: 1px solid #d8d2c8;
+  font-size: clamp(23px, 3vw, 43px);
+  letter-spacing: -.05em;
+}
+.burberry-next a:hover { color: var(--accent); }
+@media (max-width: 767px) {
+  .burberry-intro { padding-block: 35px 75px; }
+  .burberry-back { margin-bottom: 82px; }
+  .burberry-intro h1 { font-size: clamp(66px, 18vw, 120px); }
+  .burberry-deck { font-size: clamp(38px, 10vw, 58px); }
+  .burberry-intro-copy { margin: 55px 0 0; }
+  .burberry-hero-inner { min-height: 560px; }
+  .burberry-hero-wordmark { top: 8%; left: var(--gutter); font-size: clamp(58px, 14vw, 100px); }
+  .burberry-hero-coat { left: -13%; bottom: -9%; width: 75%; }
+  .burberry-hero-knit { right: -12%; bottom: -7%; width: 55%; }
+  .burberry-overview,
+  .burberry-principle,
+  .burberry-section-heading,
+  .burberry-reflection { grid-template-columns: 1fr; gap: 30px; }
+  .burberry-overview,
+  .burberry-principle,
+  .burberry-exploration,
+  .burberry-identity,
+  .burberry-applications,
+  .burberry-reflection { padding-block: 105px; }
+  .burberry-facts { margin-top: 45px; }
+  .burberry-principle h2 { margin-bottom: 30px; }
+  .burberry-section-heading { margin-bottom: 55px; }
+  .burberry-application-grid { grid-template-columns: 1fr; gap: 55px; }
+  .burberry-application-coat { grid-row: auto; }
+  .burberry-palette { align-items: start; flex-direction: column; }
+}

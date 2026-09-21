@@ -242,6 +242,14 @@ De publieke Figma-prototypelink opent als gewone externe link. Er wordt geen
 specifieke wijziging na de test of meetbare impact geclaimd, omdat Samuel die
 niet kan bevestigen. De volgende projectpagina is Burberry.
 
+UPDATE 21 SEPTEMBER 2026 — BURBERRY
+Burberry als aparte NL/EN-case study uitgewerkt: persoonlijke PET-rebrand,
+merkuitgangspunt, potloodschetsen, het bestaande schildsymbool en drie
+daadwerkelijk aanwezige kledingmockups. Concepten uit het lange projectdocument
+zoals verpakking en een website worden niet als afgeronde toepassingen getoond.
+Home en Work linken nu naar deze projectpagina. Hierna volgt een gezamenlijke
+verfijningsronde van ontwerp, inhoud, responsiviteit, toegankelijkheid en techniek.
+
 Stap 4: brede multipage-structuur toegevoegd.
 Home blijft de visuele introductie. Work geeft een scanbaar projectoverzicht.
 About bundelt richting, vaardigheden en tools. Contact biedt een directe mailroute.
