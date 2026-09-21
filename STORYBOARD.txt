@@ -262,3 +262,12 @@ Home blijft de visuele introductie. Work geeft een scanbaar projectoverzicht.
 About bundelt richting, vaardigheden en tools. Contact biedt een directe mailroute.
 Alle pagina's delen dezelfde navigatie, footer, NL/EN-content en metadata-aanpak.
 De volgende inhoudelijke stap is een eerste volledige case study voor Lumière.
+
+VERFIJNING LUMIÈRE-CASE STUDY — 21 SEPTEMBER 2026
+De intro is compacter en toont rol, ontwerpdoel en prototypelink. De grote
+hero-preview is verwijderd omdat Home en Werk deze al tonen. Het uiteindelijke
+scherm blijft zichtbaar naast low- en mid-fidelity schermen in de processectie.
+Context, ontwerpvraag, proces, testinzicht en resultaat hebben een consequente
+tekstlijn en kortere tussenruimtes. Het resultaat wordt precies een interactief
+prototype genoemd; er is geen claim over lancering of meetbare impact. De
+flowchart blijft horizontaal scrollbaar. Burberry volgt in een aparte stap.
