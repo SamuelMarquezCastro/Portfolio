@@ -33,8 +33,7 @@ const translations = {
     aboutLabel: 'Over mij',
     aboutTitle: 'Ik maak om ideeën vorm te geven.',
     aboutIntro: 'Ik ben Samuel, laatstejaarsstudent Digital Experience Design. Ik gebruik design om mijn creativiteit om te zetten in ervaringen die helder, bruikbaar en visueel sterk zijn.',
-    portraitAlt: 'Tijdelijke portretplaceholder voor Samuel.',
-    portraitCaption: 'Portret wordt later toegevoegd.',
+    portraitAlt: 'Portret van Samuel Marquez Castro.',
     directionLabel: 'Waarom design',
     directionTitle: 'Ik wilde altijd al dingen maken en ontwerpen om mijn creativiteit te gebruiken.',
     directionCopy: 'Wat mij het meeste energie geeft, is een idee effectief maken en het daarna blijven verbeteren. Door te itereren ontdek ik wat sterker, duidelijker en gebruiksvriendelijker kan.',
@@ -97,7 +96,6 @@ const translations = {
     caseNextAria: 'Verder navigeren',
     burberryCaseDeck: 'Erfgoed, opnieuw in balans.',
     burberryCaseIntro: 'Een persoonlijke rebrandstudie: hoe kan een herkenbaar luxemerk rustiger en moderner aanvoelen zonder zijn Britse karakter te verliezen?',
-    burberryHeroCaption: 'Twee uitgewerkte kledingtoepassingen van de identiteit.',
     burberryOverviewTitle: 'Geen nieuw merk. Een scherpere selectie.',
     burberryOverviewCopy: "Voor dit persoonlijke PET-project onderzocht ik hoe Burberry's bekende merkcodes met meer terughoudendheid kunnen worden ingezet. De trenchcoat, de check en de historische ruiter vormden het vertrekpunt. Mijn rol was Brand Designer, van onderzoek en logo-exploratie tot de uitwerking op kleding.",
     burberryContextValue: 'Persoonlijk PET-project · conceptuele rebrand',
@@ -167,8 +165,7 @@ const translations = {
     aboutLabel: 'About',
     aboutTitle: 'I make to give ideas a tangible form.',
     aboutIntro: 'I’m Samuel, a final-year Digital Experience Design student. I use design to turn my creativity into experiences that are clear, useful and visually strong.',
-    portraitAlt: 'Temporary portrait placeholder for Samuel.',
-    portraitCaption: 'Portrait will be added later.',
+    portraitAlt: 'Portrait of Samuel Marquez Castro.',
     directionLabel: 'Why design',
     directionTitle: 'I have always wanted to make and design things as a way to use my creativity.',
     directionCopy: 'What gives me the most energy is turning an idea into something real and then continuing to improve it. Iteration helps me discover what can be stronger, clearer and easier to use.',
@@ -231,7 +228,6 @@ const translations = {
     caseNextAria: 'Continue browsing',
     burberryCaseDeck: 'Heritage, brought back into balance.',
     burberryCaseIntro: 'A personal rebrand study: how can a recognisable luxury brand feel calmer and more contemporary without losing its British character?',
-    burberryHeroCaption: 'Two developed clothing applications of the identity.',
     burberryOverviewTitle: 'Not a new brand. A sharper selection.',
     burberryOverviewCopy: "For this personal PET project, I explored how Burberry's familiar brand codes could be used with more restraint. The trench coat, the check and the historic rider were my starting points. My role was Brand Designer, from research and logo exploration to applications on clothing.",
     burberryContextValue: 'Personal PET project · conceptual rebrand',
@@ -322,15 +318,24 @@ document.querySelectorAll('[data-current-year]').forEach(element => {
   element.textContent = new Date().getFullYear();
 });
 
-// Observeer secties één keer, zonder continue scroll-handler of verborgen inhoud.
+// Eenmalige onthullingen, alleen wanneer de browser en bewegingsvoorkeur dat toelaten.
 const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
-if ('IntersectionObserver' in window) {
+if ('IntersectionObserver' in window && !reducedMotion.matches) {
+  const sections = document.querySelectorAll('.introduction, .project-heading, .project-stage, .project-context, .page-hero, .work-row, .about-portrait, .about-story, .process-grid, .services-grid, .contact-panel, .contact-details, .case-overview, .case-question, .case-section-heading, .case-flow-figure, .case-evolution-grid, .case-insight, .case-outcome, .burberry-overview, .burberry-principle, .burberry-section-heading, .burberry-sketch, .burberry-mark-stage, .burberry-application-grid, .burberry-reflection');
   const observer = new IntersectionObserver(entries => {
     entries.forEach(entry => {
       if (!entry.isIntersecting) return;
-      if (!reducedMotion.matches) entry.target.classList.add('is-revealed');
+      entry.target.classList.add('is-revealed');
       observer.unobserve(entry.target);
     });
-  }, { threshold: 0.12 });
-  document.querySelectorAll('.introduction, .project-stage, .project-context, .page-hero, .work-row, .about-portrait, .about-story, .process-grid, .services-grid, .contact-panel, .contact-details, .case-overview, .case-section-heading, .case-insight, .burberry-overview, .burberry-principle, .burberry-section-heading, .burberry-reflection').forEach(section => observer.observe(section));
+  }, { threshold: 0.08, rootMargin: '0px 0px -6% 0px' });
+  sections.forEach(section => {
+    section.classList.add('reveal-pending');
+    observer.observe(section);
+  });
+  reducedMotion.addEventListener('change', event => {
+    if (!event.matches) return;
+    observer.disconnect();
+    sections.forEach(section => section.classList.remove('reveal-pending'));
+  }, { once: true });
 }

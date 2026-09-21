@@ -82,13 +82,13 @@ main:focus { outline: none; }
 .hero h1 {
   width: 100%;
   margin: 0;
+  text-align: center;
   font-size: clamp(62px, 13.2vw, 222px);
   font-weight: 800;
   line-height: 1.015;
   letter-spacing: -.075em;
 }
 .hero-line { display: block; white-space: nowrap; }
-.hero-line:last-child { margin-left: 6.5%; }
 
 /* Dezelfde marges verbinden de tekst en projectbeelden met de hero. */
 .content-width { max-width: 1800px; margin-inline: auto; padding-inline: var(--gutter); }
@@ -347,9 +347,27 @@ main:focus { outline: none; }
 .footer-email:hover { color: var(--text); }
 .footer-meta { justify-self: end; }
 
-/* Eenmalige binnenkomst; inhoud blijft leesbaar zonder JavaScript. */
+/* Alleen JavaScript voegt de startstatus toe. Zonder JS blijft alles zichtbaar. */
 @media (prefers-reduced-motion: no-preference) {
-  .is-revealed { animation: enter .8s cubic-bezier(.22, 1, .36, 1) both; }
+  .reveal-pending {
+    opacity: 0;
+    transform: translate3d(0, 28px, 0);
+  }
+  .reveal-pending.is-revealed {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity .8s cubic-bezier(.22, 1, .36, 1),
+      transform .8s cubic-bezier(.22, 1, .36, 1);
+  }
+  .project-stage.reveal-pending { transform: translate3d(0, 20px, 0); }
+  .project-stage.reveal-pending.is-revealed { transform: translate3d(0, 0, 0); }
+  .project-stage.reveal-pending img { transform: translate3d(0, 18px, 0); }
+  .project-stage.reveal-pending.is-revealed img {
+    transform: translate3d(0, 0, 0);
+    transition: transform 1.05s cubic-bezier(.22, 1, .36, 1) .08s;
+  }
+  .project-stage.reveal-pending.is-revealed .lumiere-device img,
+  .project-stage.reveal-pending.is-revealed .burberry-preview-logo img { transition-delay: .16s; }
 }
 @media (prefers-reduced-motion: reduce) {
   .project-link > span:last-child { transition: none; transform: none; }
@@ -361,10 +379,10 @@ main:focus { outline: none; }
   .work-row:has(.work-thumbnail:hover) .work-arrow { transform: none; }
 }
 
-/* Kleine binnenkomst, geen animatie die op interactie laat wachten. */
+/* De hero blijft direct zichtbaar; alleen de regels komen subtiel binnen. */
 @keyframes enter {
-  from { opacity: 0; transform: translateY(20px); }
-  to { opacity: 1; transform: translateY(0); }
+  from { opacity: 0; transform: translate3d(0, 20px, 0); }
+  to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @media (prefers-reduced-motion: no-preference) {
   .hero-line { animation: enter .9s cubic-bezier(.22, 1, .36, 1) both; }
@@ -394,7 +412,6 @@ main:focus { outline: none; }
   .language-switch a { min-width: 23px; }
   .hero { padding-block: 100px; }
   .hero h1 { font-size: clamp(38px, 12.6vw, 96px); line-height: 1.08; }
-  .hero-line:last-child { margin-left: 0; }
   .project-heading { gap: 8px 12px; margin-block: 22px 28px; }
   .project-heading h3 { grid-column: 1 / -1; grid-row: 1; }
   .project-heading .project-index { grid-column: 2; grid-row: 2; }

@@ -1,7 +1,7 @@
 # Samuel portfolio
 
 We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
-**Huidige stap: Home, Work, About, Contact en aparte case studies voor Lumière en Burberry.** Hierna volgt de gezamenlijke visuele en technische verfijning.
+**Huidige versie: Home, Work, About, Contact en aparte case studies voor Lumière en Burberry.** Verdere verfijning blijft mogelijk na publicatie.
 
 ## Bestanden
 
@@ -11,7 +11,7 @@ We bouwen dit portfolio stap voor stap met HTML, CSS en JavaScript.
 - `contact.html`: directe contactmogelijkheid.
 - `lumiere.html`: eerste UX/UI-case study met een link naar het Figma-prototype.
 - `burberry.html`: persoonlijke branddesign-case study met schetsen, symbool en kledingmockups.
-- `css/style.css`: kleuren, lettertypes, spacing, mobiel en introductieanimatie.
+- `css/style.css`: kleuren, lettertypes, spacing, mobiel en rustige scrollanimaties.
 - `js/main.js`: centrale NL/EN-teksten, metadata en taalkeuze via `?lang=en`.
 - `assets/fonts/`: lokaal geladen Manrope-lettertype, met open licentie.
 - `assets/images/`: geoptimaliseerde projectbeelden en transparante Burberry-toepassingen.
@@ -37,9 +37,16 @@ Verander de tekst rechtstreeks in de HTML. De kleuren staan bovenaan de CSS
 in `:root`. Vertalingen staan in `js/main.js`; houd de Nederlandse basistekst
 in HTML gelijk aan de Nederlandse vertaling.
 
-De hero blijft zichtbaar zonder JavaScript en respecteert reduced motion.
-De titel is in beide talen hetzelfde; toegankelijke labels en metadata wisselen.
-Deze lokale preview heeft bewust `noindex`. Publicatie, metadata voor sociale
-media en volledige SEO per taal worden later afgewerkt.
+De hero en inhoud blijven zichtbaar zonder JavaScript. Animaties respecteren
+`prefers-reduced-motion`. De titel in de hero is in beide talen hetzelfde;
+toegankelijke labels, paginatitels en beschrijvingen wisselen met de taalkeuze.
+
+## Publiceren
+
+De site bestaat uit statische bestanden en kan rechtstreeks via GitHub Pages
+vanuit de root van `main` worden gepubliceerd. In de repository-instellingen:
+**Settings → Pages → Build and deployment → Deploy from a branch → main / (root)**.
+Het projectadres wordt dan `https://samuelmarquezcastro.github.io/Portfolio/`.
+GitHub Pages publiceert toekomstige pushes naar `main` automatisch.
 
 GitHub is gekoppeld. Committen en pushen gebeurt alleen met toestemming.

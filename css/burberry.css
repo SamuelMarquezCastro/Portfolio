@@ -3,79 +3,47 @@
   align-items: center;
   gap: 12px;
   min-height: 44px;
-  margin-bottom: clamp(70px, 10vw, 145px);
+  margin-bottom: clamp(52px, 6vw, 85px);
   color: #666259;
   font-size: 13px;
 }
 .burberry-back:hover { color: var(--accent); }
-.burberry-intro { padding-block: 48px clamp(80px, 9vw, 135px); }
+.burberry-intro { padding-block: 35px clamp(70px, 7vw, 105px); }
 .burberry-intro h1 {
-  margin: 18px 0 25px;
-  font-size: clamp(66px, 15vw, 230px);
+  margin: 18px 0 24px;
+  font-size: clamp(82px, 11vw, 170px);
   font-weight: 800;
-  line-height: 1;
+  line-height: .95;
   letter-spacing: -.075em;
 }
 .burberry-deck {
-  max-width: 15ch;
+  max-width: 24ch;
   margin: 0;
-  font-size: clamp(37px, 5vw, 78px);
+  font-size: clamp(36px, 3.9vw, 58px);
   font-weight: 800;
   line-height: 1.13;
   letter-spacing: -.06em;
   text-wrap: balance;
 }
 .burberry-intro-copy {
-  max-width: 51ch;
-  margin: clamp(60px, 7vw, 105px) 0 0 auto;
+  max-width: 54ch;
+  margin: clamp(40px, 5vw, 70px) 0 0;
   color: #666259;
-  font-size: clamp(16px, 1.6vw, 21px);
+  font-size: clamp(16px, 1.5vw, 20px);
   line-height: 1.7;
-}
-.burberry-hero { margin: 0; }
-.burberry-hero-inner {
-  position: relative;
-  min-height: clamp(570px, 58vw, 860px);
-  overflow: hidden;
-  background: #d8c8ae;
-}
-.burberry-hero-wordmark {
-  position: absolute;
-  z-index: 1;
-  top: 9%;
-  left: 7%;
-  margin: 0;
-  color: #292520;
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: clamp(70px, 13vw, 210px);
-  line-height: 1;
-  letter-spacing: -.075em;
-}
-.burberry-hero img {
-  position: absolute;
-  z-index: 2;
-  display: block;
-  height: auto;
-  filter: drop-shadow(0 28px 25px #5a49352a);
-}
-.burberry-hero-coat { left: 6%; bottom: -22%; width: min(46%, 700px); }
-.burberry-hero-knit { right: 7%; bottom: -17%; width: min(35%, 520px); }
-.burberry-caption {
-  padding: 17px var(--gutter) 0;
-  color: #777168;
-  font-size: 12px;
 }
 .burberry-overview {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 10%;
-  padding-block: clamp(125px, 15vw, 220px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(50px, 7vw, 110px);
+  padding-block: clamp(85px, 9vw, 140px);
+  border-top: 1px solid #d8d2c8;
 }
 .burberry-overview h2,
 .burberry-reflection h2 {
-  max-width: 15ch;
-  margin: 25px 0 0;
-  font-size: clamp(39px, 5vw, 76px);
+  max-width: 17ch;
+  margin: 22px 0 0;
+  font-size: clamp(38px, 4.2vw, 64px);
   line-height: 1.12;
   letter-spacing: -.06em;
 }
@@ -86,10 +54,10 @@
   max-width: 57ch;
   margin: 0;
   color: #666259;
-  font-size: clamp(16px, 1.5vw, 21px);
-  line-height: 1.75;
+  font-size: clamp(16px, 1.45vw, 20px);
+  line-height: 1.7;
 }
-.burberry-facts { margin: 58px 0 0; }
+.burberry-facts { margin: 45px 0 0; }
 .burberry-facts > div {
   display: grid;
   grid-template-columns: .62fr 1fr;
@@ -102,35 +70,29 @@
 .burberry-facts dt { color: #777168; }
 .burberry-facts dd { margin: 0; }
 .burberry-principle {
-  display: grid;
-  grid-template-columns: .36fr 1fr;
-  gap: 8%;
-  padding-block: clamp(120px, 14vw, 200px);
+  padding-block: clamp(85px, 9vw, 140px);
   border-top: 1px solid #d8d2c8;
 }
 .burberry-principle h2 {
-  max-width: 18ch;
-  margin: 0 0 45px;
-  font-size: clamp(45px, 6vw, 94px);
+  max-width: 22ch;
+  margin: 22px 0 28px;
+  font-size: clamp(42px, 4.6vw, 70px);
   line-height: 1.1;
   letter-spacing: -.065em;
 }
 .burberry-exploration,
 .burberry-identity,
 .burberry-applications {
-  padding-block: clamp(110px, 12vw, 180px);
+  padding-block: clamp(85px, 9vw, 140px);
   border-top: 1px solid #d8d2c8;
 }
 .burberry-section-heading {
-  display: grid;
-  grid-template-columns: .36fr 1fr;
-  gap: 8%;
-  margin-bottom: clamp(55px, 8vw, 110px);
+  margin-bottom: clamp(42px, 5vw, 70px);
 }
 .burberry-section-heading h2 {
-  max-width: 17ch;
-  margin: 0 0 35px;
-  font-size: clamp(39px, 5.3vw, 80px);
+  max-width: 22ch;
+  margin: 22px 0 28px;
+  font-size: clamp(38px, 4.4vw, 67px);
   line-height: 1.12;
   letter-spacing: -.06em;
 }
@@ -207,9 +169,9 @@
 .burberry-application-sweater img { aspect-ratio: 4 / 4.6; }
 .burberry-reflection {
   display: grid;
-  grid-template-columns: .36fr 1fr;
-  gap: 8%;
-  padding-block: clamp(120px, 15vw, 220px);
+  grid-template-columns: minmax(0, 1fr) minmax(0, .9fr);
+  gap: clamp(50px, 7vw, 110px);
+  padding-block: clamp(85px, 9vw, 140px);
   border-top: 1px solid #d8d2c8;
 }
 .burberry-reflection h2 { margin: 0 0 40px; }
@@ -226,28 +188,22 @@
 }
 .burberry-next a:hover { color: var(--accent); }
 @media (max-width: 767px) {
-  .burberry-intro { padding-block: 35px 75px; }
-  .burberry-back { margin-bottom: 82px; }
-  .burberry-intro h1 { font-size: clamp(66px, 18vw, 120px); }
-  .burberry-deck { font-size: clamp(38px, 10vw, 58px); }
-  .burberry-intro-copy { margin: 55px 0 0; }
-  .burberry-hero-inner { min-height: 560px; }
-  .burberry-hero-wordmark { top: 8%; left: var(--gutter); font-size: clamp(58px, 14vw, 100px); }
-  .burberry-hero-coat { left: -13%; bottom: -9%; width: 75%; }
-  .burberry-hero-knit { right: -12%; bottom: -7%; width: 55%; }
+  .burberry-intro { padding-block: 28px 65px; }
+  .burberry-back { margin-bottom: 45px; }
+  .burberry-intro h1 { font-size: clamp(72px, 20vw, 105px); }
+  .burberry-deck { font-size: clamp(34px, 9vw, 52px); }
+  .burberry-intro-copy { margin-top: 35px; }
   .burberry-overview,
-  .burberry-principle,
-  .burberry-section-heading,
   .burberry-reflection { grid-template-columns: 1fr; gap: 30px; }
   .burberry-overview,
   .burberry-principle,
   .burberry-exploration,
   .burberry-identity,
   .burberry-applications,
-  .burberry-reflection { padding-block: 105px; }
+  .burberry-reflection { padding-block: 85px; }
   .burberry-facts { margin-top: 45px; }
   .burberry-principle h2 { margin-bottom: 30px; }
-  .burberry-section-heading { margin-bottom: 55px; }
+  .burberry-section-heading { margin-bottom: 45px; }
   .burberry-application-grid { grid-template-columns: 1fr; gap: 55px; }
   .burberry-application-coat { grid-row: auto; }
   .burberry-palette { align-items: start; flex-direction: column; }

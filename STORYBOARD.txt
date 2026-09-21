@@ -271,3 +271,27 @@ Context, ontwerpvraag, proces, testinzicht en resultaat hebben een consequente
 tekstlijn en kortere tussenruimtes. Het resultaat wordt precies een interactief
 prototype genoemd; er is geen claim over lancering of meetbare impact. De
 flowchart blijft horizontaal scrollbaar. Burberry volgt in een aparte stap.
+
+VERFIJNING BURBERRY-CASE STUDY — 21 SEPTEMBER 2026
+De grote hero met trenchcoat en trui is verwijderd: die compositie staat al op
+Home en Werk, en dezelfde beelden verschijnen verderop als toepassingen.
+De intro en tussenruimtes zijn compacter gemaakt, zodat de inhoud sneller begint.
+De schetsen, het originele SVG-logo en de drie conceptuele kledingmockups blijven
+de visuele kern van de case study. De twee losse JPG-bronbestanden blijven buiten
+de website en buiten een eventuele commit.
+
+VERFIJNING HERO EN SCROLLMOTION — 21 SEPTEMBER 2026
+De twee regels in de homepage-hero zijn nu als één gecentreerd typografisch blok
+uitgelijnd. Sectiekoppen, tekstblokken en belangrijke projectbeelden komen bij
+het scrollen kort en rustig binnen. De beelden in de projectstages bewegen subtiel
+mee binnen hun eigen compositie. Zonder JavaScript blijft alle inhoud zichtbaar;
+bij verminderde bewegingsvoorkeur worden de scrollanimaties niet geactiveerd.
+Het portret is intussen toegevoegd aan de Over mij-pagina. Voor publieke
+lancering zijn nog indexeerbare metadata en een laatste inhoudelijke en
+technische controle nodig.
+
+PUBLICATIEVOORBEREIDING — 21 SEPTEMBER 2026
+De tijdelijke noindex-tags zijn van alle zes pagina's gehaald. De site behoudt
+relatieve interne links, zodat hij onder /Portfolio/ op GitHub Pages werkt.
+Een .nojekyll-bestand laat GitHub Pages de statische bestanden rechtstreeks
+publiceren. Een lokale linkcontrole vond geen ontbrekende interne doelen.
