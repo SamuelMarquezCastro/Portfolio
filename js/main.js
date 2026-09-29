@@ -6,9 +6,12 @@ const translations = {
     navAbout: 'Over mij',
     navContact: 'Contact',
     mainNavigation: 'Hoofdnavigatie',
-    introLabel: 'Aangenaam, ik ben Samuel.',
-    introTitle: 'Een oog voor design. Aandacht voor de ervaring.',
-    introCopy: 'Ik ontwerp digitale ervaringen en visuele identiteiten. Met UX/UI als focus en oog voor de details die het verschil maken.',
+    heroRole: 'UX/UI Designer & Creative Developer',
+    heroLineOne: 'Ik geef ideeën vorm',
+    heroLineTwo: 'door te blijven verfijnen',
+    introLabel: 'Mijn manier van werken',
+    introTitle: 'Een sterk idee ontstaat zelden in één poging.',
+    introCopy: 'Ik ontwerp digitale ervaringen en visuele identiteiten door te maken, feedback te zoeken en telkens te verfijnen. Met UX/UI als focus en aandacht voor de details die het verschil maken.',
     selectedWork: 'Geselecteerd werk',
     lumiereTagline: 'Een avond film begint hier.',
     lumiereAlt: 'Het Lumière-homescherm met filmaanbod, zoekfunctie en navigatie.',
@@ -138,9 +141,12 @@ const translations = {
     navAbout: 'About',
     navContact: 'Contact',
     mainNavigation: 'Main navigation',
-    introLabel: 'Hello, I’m Samuel.',
-    introTitle: 'An eye for design. A feel for the experience.',
-    introCopy: 'I design digital experiences and visual identities. Focused on UX/UI, with an eye for the details that make a difference.',
+    heroRole: 'UX/UI Designer & Creative Developer',
+    heroLineOne: 'I shape ideas',
+    heroLineTwo: 'through iteration',
+    introLabel: 'How I work',
+    introTitle: 'A strong idea rarely happens in one attempt.',
+    introCopy: 'I design digital experiences and visual identities by making, seeking feedback and refining each iteration. Focused on UX/UI, with attention to the details that make a difference.',
     selectedWork: 'Selected work',
     lumiereTagline: 'A night at the movies starts here.',
     lumiereAlt: 'The Lumière home screen with film listings, search and navigation.',
@@ -337,5 +343,58 @@ if ('IntersectionObserver' in window && !reducedMotion.matches) {
     if (!event.matches) return;
     observer.disconnect();
     sections.forEach(section => section.classList.remove('reveal-pending'));
+  }, { once: true });
+}
+
+// Lichte scrollregie op de homepage. De beweging blijft klein en volgt alleen de
+// compositie; bij reduced motion worden er geen inline transforms aangestuurd.
+const homeHero = document.querySelector('.hero');
+const homeStages = document.querySelectorAll('.selected-work .project-stage');
+
+if (homeHero && homeStages.length && !reducedMotion.matches) {
+  let scrollFrame;
+
+  const updateScrollComposition = () => {
+    scrollFrame = undefined;
+    const viewportHeight = window.innerHeight || 1;
+    const heroProgress = Math.min(Math.max(window.scrollY / viewportHeight, 0), 1);
+    const heroTitle = homeHero.querySelector('h1');
+
+    heroTitle.style.setProperty('--hero-shift', `${heroProgress * -36}px`);
+    heroTitle.style.setProperty('--hero-opacity', String(1 - heroProgress * .34));
+
+    homeStages.forEach(stage => {
+      const bounds = stage.getBoundingClientRect();
+      const centerDifference = bounds.top + bounds.height / 2 - viewportHeight / 2;
+      const progress = Math.min(Math.max(centerDifference / viewportHeight, -1), 1);
+      stage.style.setProperty('--identity-shift', `${progress * -18}px`);
+      stage.style.setProperty('--device-shift', `${progress * 28}px`);
+      stage.style.setProperty('--logo-shift', `${progress * -14}px`);
+      stage.style.setProperty('--coat-shift', `${progress * 24}px`);
+      stage.style.setProperty('--knit-shift', `${progress * -18}px`);
+    });
+  };
+
+  const requestScrollComposition = () => {
+    if (scrollFrame) return;
+    scrollFrame = window.requestAnimationFrame(updateScrollComposition);
+  };
+
+  updateScrollComposition();
+  window.addEventListener('scroll', requestScrollComposition, { passive: true });
+  window.addEventListener('resize', requestScrollComposition);
+
+  reducedMotion.addEventListener('change', event => {
+    if (!event.matches) return;
+    window.removeEventListener('scroll', requestScrollComposition);
+    window.removeEventListener('resize', requestScrollComposition);
+    homeHero.querySelector('h1').removeAttribute('style');
+    homeStages.forEach(stage => {
+      stage.style.removeProperty('--identity-shift');
+      stage.style.removeProperty('--device-shift');
+      stage.style.removeProperty('--logo-shift');
+      stage.style.removeProperty('--coat-shift');
+      stage.style.removeProperty('--knit-shift');
+    });
   }, { once: true });
 }

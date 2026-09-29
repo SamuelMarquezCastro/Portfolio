@@ -53,11 +53,11 @@ main:focus { outline: none; }
 .site-header-static { position: relative; }
 .wordmark {
   padding-block: 12px;
-  font-size: 27px;
+  font-size: 15px;
   font-weight: 800;
-  letter-spacing: -.07em;
+  letter-spacing: -.035em;
 }
-.wordmark span { color: var(--accent); }
+.wordmark-short { display: none; }
 .header-actions { display: flex; align-items: center; gap: clamp(20px, 3vw, 54px); }
 .site-nav { display: flex; align-items: center; gap: clamp(16px, 2.2vw, 36px); font-size: 13px; }
 .site-nav a { padding-block: 12px; color: #666259; }
@@ -79,16 +79,28 @@ main:focus { outline: none; }
   display: flex;
   align-items: center;
 }
+.hero-composition { width: 100%; text-align: center; }
+.hero-role {
+  margin: 0 0 clamp(28px, 4vw, 54px);
+  font-size: 12px;
+  line-height: 1.5;
+  letter-spacing: .08em;
+  text-transform: uppercase;
+  color: #666259;
+}
 .hero h1 {
   width: 100%;
   margin: 0;
   text-align: center;
-  font-size: clamp(62px, 13.2vw, 222px);
+  font-size: clamp(54px, 8.2vw, 138px);
   font-weight: 800;
-  line-height: 1.015;
-  letter-spacing: -.075em;
+  line-height: 1.02;
+  letter-spacing: -.07em;
+  opacity: var(--hero-opacity, 1);
+  transform: translate3d(0, var(--hero-shift, 0), 0);
+  will-change: transform, opacity;
 }
-.hero-line { display: block; white-space: nowrap; }
+.hero-line { display: block; text-wrap: balance; }
 
 /* Dezelfde marges verbinden de tekst en projectbeelden met de hero. */
 .content-width { max-width: 1800px; margin-inline: auto; padding-inline: var(--gutter); }
@@ -124,6 +136,11 @@ main:focus { outline: none; }
   overflow: hidden;
   margin: 0;
   min-height: clamp(560px, 51vw, 820px);
+  --identity-shift: 0px;
+  --device-shift: 0px;
+  --logo-shift: 0px;
+  --coat-shift: 0px;
+  --knit-shift: 0px;
 }
 .project-stage-lumiere { min-height: clamp(630px, 60vw, 850px); background: #211d1c; color: #f2eee6; }
 .lumiere-identity {
@@ -133,6 +150,7 @@ main:focus { outline: none; }
   display: flex;
   flex-direction: column;
   align-items: flex-start;
+  transform: translate3d(0, var(--identity-shift), 0);
 }
 .lumiere-identity span { margin-bottom: clamp(20px, 3vw, 38px); font-size: 12px; letter-spacing: .08em; text-transform: uppercase; color: #bdb4aa; }
 .lumiere-identity img {
@@ -152,6 +170,7 @@ main:focus { outline: none; }
   border-radius: 28px;
   background: #0d0c0c;
   box-shadow: 0 24px 60px #0007;
+  transform: translate3d(0, var(--device-shift), 0);
 }
 .lumiere-device img {
   display: block;
@@ -177,6 +196,7 @@ main:focus { outline: none; }
   width: min(30%, 360px);
   aspect-ratio: 3 / 2;
   overflow: hidden;
+  transform: translate3d(0, var(--logo-shift), 0);
 }
 .burberry-preview-logo img,
 .work-burberry-logo-crop img {
@@ -199,11 +219,13 @@ main:focus { outline: none; }
   left: 5%;
   bottom: -18%;
   width: min(48%, 720px);
+  transform: translate3d(0, var(--coat-shift), 0);
 }
 .burberry-garment-knit {
   right: 4%;
   bottom: -16%;
   width: min(34%, 510px);
+  transform: translate3d(0, var(--knit-shift), 0);
 }
 
 .page-hero { padding-block: clamp(65px, 6vw, 100px) clamp(65px, 7vw, 105px); }
@@ -349,6 +371,12 @@ main:focus { outline: none; }
 
 /* Alleen JavaScript voegt de startstatus toe. Zonder JS blijft alles zichtbaar. */
 @media (prefers-reduced-motion: no-preference) {
+  .lumiere-identity,
+  .lumiere-device,
+  .burberry-preview-logo,
+  .burberry-garment {
+    will-change: transform;
+  }
   .reveal-pending {
     opacity: 0;
     transform: translate3d(0, 28px, 0);
@@ -368,8 +396,27 @@ main:focus { outline: none; }
   }
   .project-stage.reveal-pending.is-revealed .lumiere-device img,
   .project-stage.reveal-pending.is-revealed .burberry-preview-logo img { transition-delay: .16s; }
+  .project-context.reveal-pending {
+    transform: none;
+  }
+  .project-context.reveal-pending > * {
+    opacity: 0;
+    transform: translate3d(0, 22px, 0);
+  }
+  .project-context.reveal-pending.is-revealed > * {
+    opacity: 1;
+    transform: translate3d(0, 0, 0);
+    transition: opacity .75s cubic-bezier(.22, 1, .36, 1),
+      transform .75s cubic-bezier(.22, 1, .36, 1);
+  }
+  .project-context.reveal-pending.is-revealed > *:last-child { transition-delay: .1s; }
 }
 @media (prefers-reduced-motion: reduce) {
+  .hero h1,
+  .lumiere-identity,
+  .lumiere-device,
+  .burberry-preview-logo,
+  .burberry-garment { transform: none; opacity: 1; }
   .project-link > span:last-child { transition: none; transform: none; }
   .work-thumbnail img,
   .work-arrow,
@@ -385,8 +432,10 @@ main:focus { outline: none; }
   to { opacity: 1; transform: translate3d(0, 0, 0); }
 }
 @media (prefers-reduced-motion: no-preference) {
+  .hero-role { animation: enter .7s cubic-bezier(.22, 1, .36, 1) both; }
   .hero-line { animation: enter .9s cubic-bezier(.22, 1, .36, 1) both; }
-  .hero-line:last-child { animation-delay: .1s; }
+  .hero-line:first-child { animation-delay: .08s; }
+  .hero-line:last-child { animation-delay: .16s; }
 }
 
 .skip-link {
@@ -404,14 +453,17 @@ main:focus { outline: none; }
 /* Op mobiel delen beide regels dezelfde linkermarge. */
 @media (max-width: 767px) {
   .site-header { height: 80px; }
-  .wordmark { font-size: 25px; }
+  .wordmark { font-size: 18px; letter-spacing: -.055em; }
+  .wordmark-full { display: none; }
+  .wordmark-short { display: inline; }
   .header-actions { gap: 12px; }
   .site-nav { gap: 12px; font-size: 11px; }
   .site-nav a { padding-block: 14px; }
   .language-switch { gap: 3px; font-size: 10px; }
   .language-switch a { min-width: 23px; }
   .hero { padding-block: 100px; }
-  .hero h1 { font-size: clamp(38px, 12.6vw, 96px); line-height: 1.08; }
+  .hero-role { max-width: 28ch; margin-inline: auto; font-size: 10px; }
+  .hero h1 { font-size: clamp(43px, 11.8vw, 72px); line-height: 1.06; }
   .project-heading { gap: 8px 12px; margin-block: 22px 28px; }
   .project-heading h3 { grid-column: 1 / -1; grid-row: 1; }
   .project-heading .project-index { grid-column: 2; grid-row: 2; }
