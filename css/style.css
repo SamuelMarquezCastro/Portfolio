@@ -251,27 +251,49 @@ main:focus { outline: none; }
 .about-portrait { margin: 0; }
 .about-portrait img { display: block; width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
 .about-portrait figcaption { margin-top: 12px; font-size: 11px; color: #8a857c; }
+.work-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(300px, .8fr);
+  gap: clamp(60px, 9vw, 150px);
+  align-items: end;
+}
+.work-hero h1 { max-width: 15ch; font-size: clamp(50px, 5.4vw, 84px); }
+.work-hero-intro {
+  padding-left: clamp(24px, 3vw, 46px);
+  border-left: 1px solid #d8d2c8;
+}
+.work-hero-intro .page-intro { margin-top: 0; }
 .work-list { padding-bottom: clamp(130px, 17vw, 260px); }
 .work-row {
   display: grid;
-  grid-template-columns: 36px minmax(360px, .95fr) 1fr 44px;
-  gap: clamp(18px, 3vw, 48px);
-  align-items: center;
-  padding-block: clamp(34px, 5vw, 72px);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  column-gap: clamp(48px, 8vw, 130px);
+  align-items: start;
+  padding-block: clamp(44px, 6vw, 92px) clamp(90px, 10vw, 155px);
   border-top: 1px solid #d8d2c8;
 }
 .work-row:last-child { border-bottom: 1px solid #d8d2c8; }
-.work-row h2 { margin: 0; font-size: clamp(42px, 5.8vw, 88px); line-height: 1; letter-spacing: -.06em; }
-.work-discipline { margin: 15px 0 0; font-size: 12px; color: #666259; }
-.work-thumbnail { grid-column: 2; grid-row: 1 / 3; }
-.work-title-group { grid-column: 3; grid-row: 1; align-self: end; }
-.work-summary { grid-column: 3; grid-row: 2; align-self: start; margin-top: 22px; }
-.work-arrow { grid-column: 4; grid-row: 1 / 3; }
+.work-project-header {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto auto;
+  align-items: baseline;
+  gap: 0 clamp(12px, 1.6vw, 24px);
+  margin-bottom: clamp(30px, 4vw, 54px);
+}
+.work-project-header > .project-index { grid-column: 2; grid-row: 1; }
+.work-title-group { display: contents; }
+.work-title-group h2 { grid-column: 1; grid-row: 1; }
+.work-title-group .work-discipline { grid-column: 3; grid-row: 1; }
+.work-row h2 { margin: 0; font-size: clamp(52px, 5.5vw, 90px); line-height: 1; letter-spacing: -.065em; }
+.work-discipline { margin: 0; font-size: 12px; color: #666259; }
 .work-thumbnail {
   position: relative;
   overflow: hidden;
-  min-height: 245px;
-  aspect-ratio: 1.32 / 1;
+  grid-column: 1;
+  width: min(100%, 900px);
+  min-height: 320px;
+  aspect-ratio: 1.46 / 1;
   isolation: isolate;
 }
 .work-thumbnail img { position: absolute; z-index: 2; display: block; height: auto; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
@@ -293,10 +315,61 @@ main:focus { outline: none; }
 }
 .work-thumbnail-burberry .work-burberry-logo-crop img { z-index: 1; transition: none; }
 .work-thumbnail-burberry:hover .work-burberry-logo-crop img { transform: none; }
-.work-summary > p:first-child { max-width: 32ch; margin: 0; font-size: 14px; line-height: 1.7; color: #666259; }
+.work-open-label {
+  position: absolute;
+  z-index: 4;
+  right: 0;
+  bottom: 0;
+  display: flex;
+  align-items: center;
+  gap: 28px;
+  padding: 16px 20px;
+  background: var(--background);
+  color: var(--text);
+  font-size: 12px;
+  transition: color .25s ease, padding-right .25s ease;
+}
+.work-thumbnail:hover .work-open-label,
+.work-thumbnail:focus-visible .work-open-label { color: var(--accent); padding-right: 24px; }
+.work-project-copy { grid-column: 2; }
+.work-contribution {
+  max-width: 22ch;
+  margin: 18px 0 26px;
+  font-size: clamp(24px, 2.1vw, 34px);
+  line-height: 1.2;
+  letter-spacing: -.045em;
+}
+.work-project-copy > p:not(.section-label, .work-contribution, .work-type) {
+  max-width: 35ch;
+  margin: 0;
+  font-size: 14px;
+  line-height: 1.7;
+  color: #666259;
+}
 .work-type { margin: 25px 0 0; font-size: 11px; color: #8a857c; }
-.work-arrow { display: grid; width: 44px; height: 44px; place-items: center; font-size: 18px; color: #8a857c; transition: color .25s ease, transform .25s ease; }
-.work-row:has(.work-thumbnail:hover) .work-arrow { color: var(--accent); transform: translate(3px, -3px); }
+.work-process {
+  counter-reset: work-step;
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 18px 24px;
+  margin: clamp(38px, 4vw, 58px) 0 0;
+  padding: 22px 0 0;
+  border-top: 1px solid #d8d2c8;
+  list-style: none;
+}
+.work-process li {
+  counter-increment: work-step;
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  font-size: 11px;
+  color: #666259;
+}
+.work-process li::before {
+  content: "0" counter(work-step);
+  font-variant-numeric: tabular-nums;
+  color: var(--accent);
+}
 .about-story {
   padding-block: clamp(65px, 7vw, 105px);
   border-top: 1px solid #d8d2c8;
@@ -419,11 +492,10 @@ main:focus { outline: none; }
   .burberry-garment { transform: none; opacity: 1; }
   .project-link > span:last-child { transition: none; transform: none; }
   .work-thumbnail img,
-  .work-arrow,
+  .work-open-label,
   .contact-email,
   .contact-email span { transition: none; }
-  .work-thumbnail:hover img,
-  .work-row:has(.work-thumbnail:hover) .work-arrow { transform: none; }
+  .work-thumbnail:hover img { transform: none; }
 }
 
 /* De hero blijft direct zichtbaar; alleen de regels komen subtiel binnen. */
@@ -487,14 +559,23 @@ main:focus { outline: none; }
   .page-intro { margin-top: 24px; }
   .about-hero { grid-template-columns: 1fr; gap: 60px; }
   .about-portrait { width: 82%; margin-left: auto; }
-  .work-row { grid-template-columns: 28px 1fr 44px; gap: 18px 12px; align-items: start; }
-  .work-row > .project-index { grid-column: 1; grid-row: 2; margin-top: 8px; }
-  .work-thumbnail { grid-column: 1 / -1; min-height: 0; aspect-ratio: 1.25 / 1; }
+  .work-hero { grid-template-columns: 1fr; gap: 42px; }
+  .work-hero-intro { padding: 24px 0 0; border-top: 1px solid #d8d2c8; border-left: 0; }
+  .work-row { grid-template-columns: 1fr; padding-block: 34px 105px; }
+  .work-project-header { grid-column: 1; grid-template-columns: minmax(0, 1fr) auto auto; gap: 8px 12px; margin-bottom: 28px; }
+  .work-title-group { display: contents; }
+  .work-title-group h2 { grid-column: 1 / -1; grid-row: 1; }
+  .work-project-header > .project-index { grid-column: 2; grid-row: 2; }
+  .work-title-group .work-discipline { grid-column: 3; grid-row: 2; }
+  .work-row h2 { font-size: clamp(48px, 15vw, 72px); }
+  .work-discipline { margin-top: 0; }
+  .work-thumbnail { grid-column: 1; min-height: 0; aspect-ratio: 1.25 / 1; }
   .work-thumbnail-lumiere .work-preview-screen { width: 34%; }
   .work-thumbnail-burberry > img { bottom: -42%; width: 61%; }
-  .work-title-group { grid-column: 2; grid-row: 2; }
-  .work-arrow { grid-column: 3; grid-row: 2; }
-  .work-summary { grid-column: 2 / -1; }
+  .work-open-label { padding: 13px 15px; gap: 18px; font-size: 10px; }
+  .work-project-copy { grid-column: 1; margin-top: 34px; }
+  .work-contribution { max-width: 24ch; margin-top: 14px; }
+  .work-process { margin-top: 42px; }
   .process-grid { grid-template-columns: 1fr; gap: 14px; }
   .process-grid article { min-height: 270px; }
   .services-grid { grid-template-columns: 1fr; gap: 56px; }

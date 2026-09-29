@@ -8,8 +8,8 @@
   <title>Werk | Samuel Marquez Castro</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preload" href="assets/fonts/manrope-bold.ttf" as="font" type="font/ttf" crossorigin>
-  <link rel="stylesheet" href="css/style.css?v=14">
-  <script src="js/main.js?v=8" defer></script>
+  <link rel="stylesheet" href="css/style.css?v=18">
+  <script src="js/main.js?v=10" defer></script>
 </head>
 <body data-page="work">
   <a class="skip-link" href="#main" data-i18n="skip">Naar de inhoud</a>
@@ -29,43 +29,67 @@
     </div>
   </header>
   <main id="main" tabindex="-1">
-    <section class="page-hero content-width" aria-labelledby="page-title">
-      <p class="section-label" data-i18n="workLabel">Geselecteerd werk</p>
-      <h1 id="page-title" data-i18n="workTitle">Werk met een duidelijk idee en een sterke uitvoering.</h1>
-      <p class="page-intro" data-i18n="workIntro">Van digitale productervaringen tot visuele identiteit. Elk project toont hoe ik onderzoek, ontwerp en afwerking samenbreng.</p>
+    <section class="page-hero work-hero content-width" aria-labelledby="page-title">
+      <div class="work-hero-heading">
+        <p class="section-label" data-i18n="workLabel">Geselecteerd werk</p>
+        <h1 id="page-title" data-i18n="workTitle">Werk gevormd door onderzoek, feedback en verfijning.</h1>
+      </div>
+      <div class="work-hero-intro">
+        <p class="page-intro" data-i18n="workIntro">Van UX/UI tot brand design. Elk project laat een ander deel van mijn proces zien.</p>
+      </div>
     </section>
     <section class="work-list content-width" aria-label="Projecten" data-i18n-aria="projectsLabel">
       <article class="work-row">
-        <p class="project-index" aria-hidden="true">01</p>
+        <header class="work-project-header">
+          <p class="project-index" aria-hidden="true">01</p>
+          <div class="work-title-group">
+            <h2>Lumière</h2>
+            <p class="work-discipline">UX/UI Product Design</p>
+          </div>
+        </header>
         <a class="work-thumbnail work-thumbnail-lumiere" href="lumiere.html?lang=nl" data-page-link="lumiere.html" aria-label="Bekijk de Lumière-case study" data-i18n-aria="openLumiere">
           <img class="work-thumbnail-logo" src="assets/images/lumiere-logo.svg" width="465" height="290" alt="" loading="lazy" decoding="async">
           <img class="work-preview-screen" src="assets/images/lumiere-home.jpg" width="393" height="852" alt="" loading="lazy" decoding="async">
+          <span class="work-open-label"><span data-i18n="openProject">Open case study</span><span aria-hidden="true">↗</span></span>
         </a>
-        <div class="work-title-group">
-          <h2>Lumière<span class="accent">.</span></h2>
-          <p class="work-discipline">UX/UI Product Design</p>
-        </div>
-        <div class="work-summary">
+        <div class="work-project-copy">
+          <p class="section-label" data-i18n="contributionLabel">Mijn bijdrage</p>
+          <p class="work-contribution" data-i18n="lumiereContribution">Een complexe filmkeuze terugbrengen tot een heldere, testbare flow.</p>
           <p data-i18n="lumiereDescription">Van een film ontdekken tot een avond plannen. Een cinema-app voor tickets, filmaanbod en persoonlijke voorkeuren.</p>
           <p class="work-type" data-i18n="schoolProject">Schoolopdracht</p>
+          <ol class="work-process" aria-label="Proces" data-i18n-aria="processAria">
+            <li data-i18n="researchStep">Onderzoek</li>
+            <li data-i18n="flowsStep">Flows</li>
+            <li data-i18n="prototypeStep">Prototype</li>
+            <li data-i18n="testStep">Test</li>
+          </ol>
         </div>
-        <span class="work-arrow" aria-hidden="true">↗</span>
       </article>
       <article class="work-row">
-        <p class="project-index" aria-hidden="true">02</p>
+        <header class="work-project-header">
+          <p class="project-index" aria-hidden="true">02</p>
+          <div class="work-title-group">
+            <h2>Burberry</h2>
+            <p class="work-discipline">Brand Design</p>
+          </div>
+        </header>
         <a class="work-thumbnail work-thumbnail-burberry" href="burberry.html?lang=nl" data-page-link="burberry.html" aria-label="Bekijk de Burberry-case study" data-i18n-aria="openBurberry">
           <span class="work-burberry-logo-crop" aria-hidden="true"><img src="Burberry_project/Assets/Burberry%20rebrand.svg" width="1000" height="1000" alt="" loading="lazy" decoding="async"></span>
           <img src="assets/images/burberry-coat.png" width="1086" height="1448" alt="" loading="lazy" decoding="async">
+          <span class="work-open-label"><span data-i18n="openProject">Open case study</span><span aria-hidden="true">↗</span></span>
         </a>
-        <div class="work-title-group">
-          <h2>Burberry<span class="accent">.</span></h2>
-          <p class="work-discipline">Brand Design</p>
-        </div>
-        <div class="work-summary">
+        <div class="work-project-copy">
+          <p class="section-label" data-i18n="contributionLabel">Mijn bijdrage</p>
+          <p class="work-contribution" data-i18n="burberryContribution">Bekende merkcodes hertekenen tot een rustigere visuele identiteit.</p>
           <p data-i18n="burberryDescription">Een rustigere, moderne identiteit die het Britse erfgoed herkenbaar houdt.</p>
           <p class="work-type" data-i18n="personalProject">Persoonlijk project</p>
+          <ol class="work-process" aria-label="Proces" data-i18n-aria="processAria">
+            <li data-i18n="researchStep">Onderzoek</li>
+            <li data-i18n="sketchStep">Schetsen</li>
+            <li data-i18n="identityStep">Identiteit</li>
+            <li data-i18n="applicationStep">Toepassingen</li>
+          </ol>
         </div>
-        <span class="work-arrow" aria-hidden="true">↗</span>
       </article>
     </section>
   </main>
