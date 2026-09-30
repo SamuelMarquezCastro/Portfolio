@@ -298,6 +298,64 @@ main:focus { outline: none; }
 }
 .work-thumbnail img { position: absolute; z-index: 2; display: block; height: auto; transition: transform .5s cubic-bezier(.22, 1, .36, 1); }
 .work-thumbnail:hover img { transform: translateY(-4px) scale(1.025); }
+.work-thumbnail-light-love {
+  margin: 0;
+  background: #18284a;
+  color: #f6f2e9;
+}
+.work-light-love-title {
+  position: absolute;
+  z-index: 1;
+  top: 11%;
+  left: 8%;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+.work-light-love-title span { font-size: 10px; letter-spacing: .12em; text-transform: uppercase; opacity: .72; }
+.work-light-love-title strong { font-size: clamp(34px, 3.8vw, 60px); line-height: .92; letter-spacing: -.06em; }
+.work-browser-frame {
+  position: absolute;
+  z-index: 2;
+  top: 9%;
+  right: 7%;
+  width: 47%;
+  height: 104%;
+  overflow: hidden;
+  background: #fff;
+  box-shadow: 0 18px 35px #050b1838;
+}
+.work-thumbnail .work-browser-frame img { top: 0; left: 0; width: 100%; transition: transform .7s cubic-bezier(.22, 1, .36, 1); }
+.work-thumbnail-light-love:hover .work-browser-frame img { transform: translateY(-1.5%) scale(1.012); }
+.work-thumbnail-next {
+  margin: 0;
+  background: #eee7dc;
+  color: #191a18;
+}
+.work-thumbnail-next::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 42%;
+  height: 12px;
+  background: #eba936;
+}
+.work-next-screen {
+  position: absolute;
+  z-index: 1;
+  top: 8%;
+  left: 7%;
+  width: 53%;
+  height: 105%;
+  overflow: hidden;
+  background: #f7f2e9;
+  box-shadow: 0 18px 35px #4f473b26;
+}
+.work-thumbnail .work-next-screen img { top: 0; left: 0; width: 100%; transition: transform .7s cubic-bezier(.22, 1, .36, 1); }
+.work-thumbnail-next:hover .work-next-screen img { transform: translateY(-1.5%) scale(1.012); }
+.work-thumbnail .work-next-logo { z-index: 2; top: 20%; right: 7%; width: 29%; transition: none; }
+.work-thumbnail-next:hover .work-next-logo { transform: none; }
 .work-thumbnail-lumiere { background: #211d1c; color: #f2eee6; }
 .work-thumbnail-lumiere .work-thumbnail-logo { z-index: 1; top: 13%; left: 8%; width: 45%; filter: invert(1); transition: none; }
 .work-thumbnail-lumiere:hover .work-thumbnail-logo { transform: none; }
@@ -570,6 +628,11 @@ main:focus { outline: none; }
   .work-row h2 { font-size: clamp(48px, 15vw, 72px); }
   .work-discipline { margin-top: 0; }
   .work-thumbnail { grid-column: 1; min-height: 0; aspect-ratio: 1.25 / 1; }
+  .work-light-love-title { top: 9%; left: 7%; gap: 12px; }
+  .work-light-love-title strong { font-size: clamp(30px, 10vw, 47px); }
+  .work-browser-frame { right: 6%; width: 48%; }
+  .work-next-screen { left: 6%; width: 56%; }
+  .work-thumbnail .work-next-logo { top: 18%; right: 6%; width: 28%; }
   .work-thumbnail-lumiere .work-preview-screen { width: 34%; }
   .work-thumbnail-burberry > img { bottom: -42%; width: 61%; }
   .work-open-label { padding: 13px 15px; gap: 18px; font-size: 10px; }
