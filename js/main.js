@@ -657,32 +657,52 @@ const translations = {
 
 const metadata = {
   nl: {
-    home: ['Samuel | Designer & Developer', 'Samuel Marquez Castro. Designer & Developer met een focus op UX/UI en visueel ontwerp.'],
-    work: ['Werk | Samuel Marquez Castro', 'Geselecteerd UX/UI- en branddesignwerk van Samuel Marquez Castro.'],
-    about: ['Over mij | Samuel Marquez Castro', 'Over Samuel Marquez Castro, Designer & Developer met een focus op UX/UI.'],
-    contact: ['Contact | Samuel Marquez Castro', 'Neem contact op met Samuel Marquez Castro voor werk, stage of een kennismaking.'],
-    lumiere: ['Lumière | Samuel Marquez Castro', 'Lumière: een individueel UX/UI-appconcept van Samuel Marquez Castro voor het vak Lab.'],
-    burberry: ['Burberry | Samuel Marquez Castro', 'Burberry: een persoonlijke branddesignstudie van Samuel Marquez Castro rond erfgoed en eenvoud.'],
-    lightLove: ['Licht & Liefde | Samuel Marquez Castro', 'Licht & Liefde: UX research, informatiearchitectuur en gebruikerstesten door Samuel Marquez Castro binnen een groepsproject.']
+    home: ['UX/UI designer & developer | Samuel Marquez Castro', 'Ik ontwerp digitale ervaringen met aandacht voor onderzoek, feedback en iteratie. Bekijk mijn UX/UI-portfolio en projecten.'],
+    work: ['UX/UI-portfolio | Onderzoek en ontwerp | Samuel Marquez Castro', 'Bekijk projecten in UX research, informatiearchitectuur, gebruikerstesten, UI design en visuele identiteit.'],
+    about: ['Over Samuel | UX/UI designer & creative developer', 'Ik ben Samuel, UX/UI designer en creative developer. Ik werk iteratief, vraag feedback en vertaal inzichten naar duidelijke digitale ervaringen.'],
+    contact: ['Contact voor een UX/UI- of CRO-stage | Samuel Marquez Castro', 'Neem contact op met Samuel Marquez Castro voor een UX/UI- of CRO-stage, een project of een kennismaking.'],
+    lumiere: ['Lumière-appconcept | UX/UI case study | Samuel', 'Een individueel UX/UI-appconcept voor Lumière: van onderzoek en user flows tot wireframes en een interactief prototype.'],
+    burberry: ['Burberry rebrandconcept | Visuele identiteit | Samuel', 'Een persoonlijke conceptstudie naar Burberry’s merkcodes, uitgewerkt in een woordmerk, schildsymbool en kledingmockups.'],
+    lightLove: ['Licht & Liefde | UX research en gebruikerstesten | Samuel', 'In dit groepsproject was ik teamlead en werkte ik aan card sorting, informatiearchitectuur, wireframes en tests met zes deelnemers.']
   },
   en: {
-    home: ['Samuel | Designer & Developer', 'Samuel Marquez Castro. Designer & Developer focused on UX/UI and visual design.'],
-    work: ['Work | Samuel Marquez Castro', 'Selected UX/UI and brand design work by Samuel Marquez Castro.'],
-    about: ['About | Samuel Marquez Castro', 'About Samuel Marquez Castro, a Designer & Developer focused on UX/UI.'],
-    contact: ['Contact | Samuel Marquez Castro', 'Contact Samuel Marquez Castro about work, an internship or an introduction.'],
-    lumiere: ['Lumière | Samuel Marquez Castro', 'Lumière: an individual UX/UI app concept by Samuel Marquez Castro for his Lab course.'],
-    burberry: ['Burberry | Samuel Marquez Castro', 'Burberry: a personal brand design study by Samuel Marquez Castro exploring heritage and simplicity.'],
-    lightLove: ['Licht & Liefde | Samuel Marquez Castro', 'Licht & Liefde: UX research, information architecture and usability testing by Samuel Marquez Castro within a group project.']
+    home: ['UX/UI Designer & Developer | Samuel Marquez Castro', 'I design digital experiences through research, feedback and iteration. Explore my UX/UI portfolio and selected projects.'],
+    work: ['UX/UI Portfolio | Research & Design | Samuel Marquez Castro', 'Explore projects in UX research, information architecture, usability testing, UI design and visual identity.'],
+    about: ['About Samuel | UX/UI Designer & Creative Developer', 'I’m Samuel, a UX/UI designer and creative developer. I iterate, seek feedback and turn insights into clear digital experiences.'],
+    contact: ['Contact | UX/UI or CRO Internship | Samuel Marquez Castro', 'Contact Samuel Marquez Castro about a UX/UI or CRO internship, a project or an introduction.'],
+    lumiere: ['Lumière App Concept | UX/UI Case Study | Samuel', 'An individual UX/UI concept for Lumière, from research and user flows to wireframes and an interactive prototype.'],
+    burberry: ['Burberry Rebrand Concept | Visual Identity | Samuel', 'A personal study of Burberry’s brand codes, developed into a wordmark, shield symbol and apparel mockups.'],
+    lightLove: ['Licht & Liefde | UX Research & Usability Testing | Samuel', 'As team lead on this group project, I worked on card sorting, information architecture, wireframes and tests with six participants.']
   }
 };
 
 const language = new URLSearchParams(window.location.search).get('lang') === 'en' ? 'en' : 'nl';
 const content = translations[language];
 const page = document.body.dataset.page || 'home';
+const socialImages = {
+  home: ['assets/images/og-home.svg', 'Ik geef ideeën vorm door te blijven verfijnen. — Samuel Marquez Castro', 'I shape ideas through iteration. — Samuel Marquez Castro'],
+  work: ['assets/images/og-home.svg', 'Portfolio van Samuel Marquez Castro — UX/UI design en development', 'Portfolio by Samuel Marquez Castro — UX/UI design and development'],
+  about: ['assets/images/samuel-portrait.png', 'Portret van Samuel Marquez Castro', 'Portrait of Samuel Marquez Castro'],
+  contact: ['assets/images/samuel-portrait.png', 'Portret van Samuel Marquez Castro', 'Portrait of Samuel Marquez Castro'],
+  lumiere: ['assets/images/lumiere-home.jpg', 'Het Lumière-appconcept met filmaanbod en zoekfunctie', 'The Lumière app concept with film listings and search'],
+  lightLove: ['assets/images/projects/light-love-card-sort.png', 'Card-sortresultaten uit het UX-researchproject voor Licht & Liefde', 'Card sorting results from the Licht & Liefde UX research project'],
+  burberry: ['assets/images/burberry-coat.png', 'Trenchcoat met het conceptuele Burberry-label en subtiele merkdetails', 'Trench coat with the conceptual Burberry label and subtle brand details']
+};
+const publicBase = 'https://samuelmarquezcastro.github.io/Portfolio/';
 
 document.documentElement.lang = language;
 document.title = metadata[language][page][0];
 document.querySelector('meta[name="description"]').content = metadata[language][page][1];
+document.querySelector('meta[property="og:title"]').content = metadata[language][page][0];
+document.querySelector('meta[property="og:description"]').content = metadata[language][page][1];
+document.querySelector('meta[property="og:url"]').content = window.location.href;
+document.querySelector('meta[property="og:image"]').content = new URL(socialImages[page][0], publicBase).href;
+document.querySelector('meta[property="og:image:alt"]').content = socialImages[page][language === 'nl' ? 1 : 2];
+document.querySelector('meta[property="og:locale"]').content = language === 'nl' ? 'nl_BE' : 'en_GB';
+document.querySelector('meta[property="og:locale:alternate"]').content = language === 'nl' ? 'en_GB' : 'nl_BE';
+document.querySelector('meta[name="twitter:title"]').content = metadata[language][page][0];
+document.querySelector('meta[name="twitter:description"]').content = metadata[language][page][1];
+document.querySelector('meta[name="twitter:image"]').content = new URL(socialImages[page][0], publicBase).href;
 document.querySelector('.language-switch').setAttribute('aria-label', content.language);
 
 document.querySelectorAll('[data-i18n]').forEach(element => {
