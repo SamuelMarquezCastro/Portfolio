@@ -802,3 +802,232 @@ if (homeHero && homeStages.length && !reducedMotion.matches) {
     });
   }, { once: true });
 }
+
+// Optional analytics are kept out of the page until the visitor opts in.
+function initCookieConsent() {
+  const consentKey = 'smc-cookie-consent-v1';
+  const consentLifetime = 180 * 24 * 60 * 60 * 1000;
+  const analyticsServices = [
+    { name: 'Google Analytics 4', description: language === 'nl' ? 'Bezoekstatistieken via Google Tag Manager.' : 'Visit statistics through Google Tag Manager.' },
+    { name: 'Contentsquare', description: language === 'nl' ? 'Inzicht in hoe bezoekers de pagina’s gebruiken.' : 'Insights into how visitors use the pages.' }
+  ];
+  let consent = null;
+  let analyticsLoaded = false;
+
+  try {
+    consent = JSON.parse(window.localStorage.getItem(consentKey));
+    if (!consent || consent.version !== 1 || !Number.isFinite(consent.savedAt) || Date.now() - consent.savedAt > consentLifetime) {
+      consent = null;
+      window.localStorage.removeItem(consentKey);
+    }
+  } catch (error) {
+    consent = null;
+  }
+
+  const loadAnalytics = () => {
+    if (analyticsLoaded) return;
+    analyticsLoaded = true;
+
+    // GA4 is configured in this GTM container. The container itself is gated
+    // here so no analytics tag or request runs before opt-in.
+    window.dataLayer = window.dataLayer || [];
+    window.dataLayer.push({ 'gtm.start': Date.now(), event: 'gtm.js' });
+    const gtm = document.createElement('script');
+    gtm.async = true;
+    gtm.src = 'https://www.googletagmanager.com/gtm.js?id=GTM-NXGZWL8R';
+    gtm.dataset.optionalAnalytics = 'true';
+    document.head.appendChild(gtm);
+
+    const contentsquare = document.createElement('script');
+    contentsquare.async = true;
+    contentsquare.src = 'https://t.contentsquare.net/uxa/8b4257addf547.js';
+    contentsquare.dataset.optionalAnalytics = 'true';
+    document.head.appendChild(contentsquare);
+  };
+
+  const saveConsent = analytics => {
+    const next = { version: 1, essential: true, analytics: Boolean(analytics), savedAt: Date.now() };
+    try {
+      window.localStorage.setItem(consentKey, JSON.stringify(next));
+    } catch (error) {
+      // The current-page choice still works if browser storage is unavailable.
+    }
+    consent = next;
+    return next;
+  };
+
+  const copy = language === 'nl' ? {
+    title: 'Jij kiest wat we meten.',
+    intro: 'Essentiële opslag onthoudt je keuze. Met jouw toestemming gebruiken we Google Analytics 4 en Contentsquare om te begrijpen hoe de portfolio wordt gebruikt. Zonder toestemming blijven deze meettools uit.',
+    accept: 'Alles accepteren',
+    reject: 'Weigeren',
+    customize: 'Voorkeuren beheren',
+    settingsTitle: 'Cookievoorkeuren',
+    settingsSectionTitle: 'Categorieën',
+    settingsIntro: 'Kies of je gebruiksstatistieken wilt delen. Je kunt je keuze later aanpassen via Cookie-instellingen.',
+    essential: 'Essentieel',
+    essentialDescription: 'Onthoudt je cookiekeuze en is nodig om je voorkeur toe te passen.',
+    alwaysOn: 'Altijd actief',
+    analytics: 'Analytics',
+    analyticsDescription: 'Google Analytics 4 en Contentsquare meten bezoeken en interacties om de portfolio te verbeteren.',
+    save: 'Keuze opslaan',
+    back: 'Terug',
+    manage: 'Cookie-instellingen',
+    statusSaved: 'Je cookievoorkeur is opgeslagen.',
+    statusReload: 'Je keuze is opgeslagen. De pagina wordt vernieuwd zodat analytics stopt.',
+    close: 'Sluiten'
+  } : {
+    title: 'You choose what we measure.',
+    intro: 'Essential storage remembers your choice. With your permission, Google Analytics 4 and Contentsquare help us understand how the portfolio is used. These analytics tools stay off without your permission.',
+    accept: 'Accept all',
+    reject: 'Reject',
+    customize: 'Manage preferences',
+    settingsTitle: 'Cookie preferences',
+    settingsSectionTitle: 'Categories',
+    settingsIntro: 'Choose whether to share usage statistics. You can change your choice later using Cookie settings.',
+    essential: 'Essential',
+    essentialDescription: 'Remembers your cookie choice and is needed to apply your preference.',
+    alwaysOn: 'Always active',
+    analytics: 'Analytics',
+    analyticsDescription: 'Google Analytics 4 and Contentsquare measure visits and interactions to improve the portfolio.',
+    save: 'Save choices',
+    back: 'Back',
+    manage: 'Cookie settings',
+    statusSaved: 'Your cookie preference has been saved.',
+    statusReload: 'Your choice is saved. The page will reload so analytics stops.',
+    close: 'Close'
+  };
+
+  const region = document.createElement('aside');
+  region.className = 'cookie-consent';
+  region.setAttribute('role', 'region');
+  region.setAttribute('aria-label', language === 'nl' ? 'Cookievoorkeuren' : 'Cookie preferences');
+  region.hidden = true;
+  region.innerHTML = `
+    <div class="cookie-consent__panel" aria-labelledby="cookie-consent-title">
+      <div class="cookie-consent__copy">
+        <p class="cookie-consent__eyebrow">${language === 'nl' ? 'Privacykeuze' : 'Privacy choice'}</p>
+        <h2 id="cookie-consent-title"></h2>
+        <p class="cookie-consent__intro"></p>
+      </div>
+      <div class="cookie-consent__settings" hidden>
+        <h3 class="cookie-consent__settings-title"></h3>
+        <p class="cookie-consent__settings-intro"></p>
+        <div class="cookie-consent__category">
+          <div><strong class="cookie-consent__essential-title"></strong><p class="cookie-consent__essential-description"></p></div>
+          <span class="cookie-consent__always-on"></span>
+        </div>
+        <label class="cookie-consent__category cookie-consent__category--toggle">
+          <span><strong class="cookie-consent__analytics-title"></strong><span class="cookie-consent__analytics-description"></span>
+            <span class="cookie-consent__services"></span></span>
+          <input class="cookie-consent__analytics-toggle" type="checkbox">
+          <span class="cookie-consent__switch" aria-hidden="true"></span>
+        </label>
+      </div>
+      <div class="cookie-consent__actions">
+        <button class="cookie-consent__button cookie-consent__button--reject" type="button"></button>
+        <button class="cookie-consent__button cookie-consent__button--manage" type="button"></button>
+        <button class="cookie-consent__button cookie-consent__button--accept" type="button"></button>
+      </div>
+      <p class="cookie-consent__status" role="status" aria-live="polite"></p>
+    </div>`;
+
+  const manageButton = document.createElement('button');
+  manageButton.className = 'cookie-consent__manage-link';
+  manageButton.type = 'button';
+  manageButton.textContent = copy.manage;
+  manageButton.setAttribute('aria-label', copy.manage);
+  document.body.append(region, manageButton);
+
+  const panel = region.querySelector('.cookie-consent__panel');
+  const settings = region.querySelector('.cookie-consent__settings');
+  const title = region.querySelector('#cookie-consent-title');
+  const intro = region.querySelector('.cookie-consent__intro');
+  const settingsTitle = region.querySelector('.cookie-consent__settings-title');
+  const settingsIntro = region.querySelector('.cookie-consent__settings-intro');
+  const essentialTitle = region.querySelector('.cookie-consent__essential-title');
+  const essentialDescription = region.querySelector('.cookie-consent__essential-description');
+  const analyticsTitle = region.querySelector('.cookie-consent__analytics-title');
+  const analyticsDescription = region.querySelector('.cookie-consent__analytics-description');
+  const services = region.querySelector('.cookie-consent__services');
+  const analyticsToggle = region.querySelector('.cookie-consent__analytics-toggle');
+  const alwaysOn = region.querySelector('.cookie-consent__always-on');
+  const rejectButton = region.querySelector('.cookie-consent__button--reject');
+  const manageChoiceButton = region.querySelector('.cookie-consent__button--manage');
+  const acceptButton = region.querySelector('.cookie-consent__button--accept');
+  const status = region.querySelector('.cookie-consent__status');
+  let editing = false;
+
+  title.textContent = copy.title;
+  intro.textContent = copy.intro;
+  settingsTitle.textContent = copy.settingsSectionTitle;
+  settingsIntro.textContent = copy.settingsIntro;
+  essentialTitle.textContent = copy.essential;
+  essentialDescription.textContent = copy.essentialDescription;
+  analyticsTitle.textContent = copy.analytics;
+  analyticsDescription.textContent = copy.analyticsDescription;
+  alwaysOn.textContent = copy.alwaysOn;
+  services.textContent = analyticsServices.map(service => `${service.name}: ${service.description}`).join(' ');
+  rejectButton.textContent = copy.reject;
+  manageChoiceButton.textContent = copy.customize;
+  acceptButton.textContent = copy.accept;
+
+  const showBanner = (showSettings = false) => {
+    editing = showSettings;
+    status.textContent = '';
+    region.hidden = false;
+    settings.hidden = !editing;
+    intro.hidden = editing;
+    title.textContent = editing ? copy.settingsTitle : copy.title;
+    rejectButton.hidden = editing;
+    manageChoiceButton.hidden = editing;
+    manageChoiceButton.textContent = copy.customize;
+    acceptButton.textContent = editing ? copy.save : copy.accept;
+    if (editing) {
+      analyticsToggle.checked = Boolean(consent && consent.analytics);
+      requestAnimationFrame(() => analyticsToggle.focus());
+    } else {
+      requestAnimationFrame(() => rejectButton.focus());
+    }
+  };
+
+  const hideBanner = message => {
+    region.hidden = true;
+    manageButton.hidden = false;
+    status.textContent = message || '';
+  };
+
+  const choose = analytics => {
+    const wasAnalytics = Boolean(consent && consent.analytics);
+    const next = saveConsent(analytics);
+    manageButton.hidden = false;
+    if (next.analytics) loadAnalytics();
+    region.hidden = true;
+
+    if (wasAnalytics && !next.analytics) {
+      // Reloading creates a clean document before any optional tag can run again.
+      status.textContent = copy.statusReload;
+      window.location.reload();
+      return;
+    }
+    status.textContent = copy.statusSaved;
+  };
+
+  rejectButton.addEventListener('click', () => choose(false));
+  manageChoiceButton.addEventListener('click', () => showBanner(true));
+  acceptButton.addEventListener('click', () => choose(editing ? analyticsToggle.checked : true));
+  manageButton.addEventListener('click', () => showBanner(true));
+
+  const renderManageButton = () => {
+    manageButton.hidden = !consent;
+  };
+  renderManageButton();
+
+  if (!consent) {
+    showBanner(false);
+  } else if (consent.analytics) {
+    loadAnalytics();
+  }
+}
+
+initCookieConsent();
